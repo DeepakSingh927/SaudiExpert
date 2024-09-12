@@ -408,7 +408,7 @@ export default function Footer() {
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
             {/* Logo */}
             <div className="flex items-start justify-center md:col-span-1">
-              <img src="/Assests/logo1-.png" alt="AJAX" />
+              <img src="/Assests/logo1-.png" alt="AJAX" loading="lazy" />
             </div>
 
             {/* Footer Columns */}

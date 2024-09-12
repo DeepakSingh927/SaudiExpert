@@ -30,6 +30,7 @@ const MarcouCompo = () => {
                         src={img}
                         alt={`Client ${index % firstHalf.length + 1}`}
                         className="w-full h-full object-contain"
+                        loading="lazy"
                       />
                     </div>
                   </div>
@@ -43,6 +44,7 @@ const MarcouCompo = () => {
                     <div className="w-full h-full overflow-hidden border-4 border-white border-opacity-30">
                       <img
                         src={img}
+                        loading="lazy"
                         alt={`Client ${index % secondHalf.length + half + 1}`}
                         className="w-full h-full object-contain"
                       />

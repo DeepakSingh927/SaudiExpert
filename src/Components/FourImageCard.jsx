@@ -31,7 +31,7 @@ const eventData = [
 const EventCard = ({ image, title, description, bgColor }) => (
   <div className={`relative overflow-hidden group`}>
     <div className="bg-white p-4 transition-all duration-300 group-hover:translate-y-[-100%]">
-      <img src={image} alt={title} className="w-full object-cover h-64" />
+      <img src={image} alt={title} className="w-full object-cover h-64" loading="lazy"/>
       <div className="mt-2">
         <h3 className="text-lg font-bold text-blue-900">{title}</h3>
         <p className="text-sm text-gray-600">{description}</p>

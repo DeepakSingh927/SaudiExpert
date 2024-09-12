@@ -50,6 +50,7 @@
             <img
               src={imgArray[currentImageIndex]}
               alt={`Event Image ${currentImageIndex + 1}`}
+              loading="lazy"
               className={`w-full h-full object-cover object-center transition-opacity duration-1000 ${
                 fadeOut ? "opacity-0" : "opacity-100"
               }`}

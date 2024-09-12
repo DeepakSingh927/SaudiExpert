@@ -17,6 +17,7 @@ const FlagPopup = ({ country }) => {
       <div className="p-2 w-[50%]">
         <img
           src={country.img}
+          loading="lazy"
           alt={`${country.name} flag`}
           className="w-full h-auto"
         />
@@ -132,6 +133,7 @@ export default function WorldMap() {
           <img
             src="/Assests/8.jpg"
             alt="World Map"
+            loading="lazy"
             className="w-full h-screen object-cover"
           />
           {dataArray.map((country) => (

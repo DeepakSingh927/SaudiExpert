@@ -88,8 +88,10 @@ export default function SimilerProductCard({ dataArray }) {
         </div>
         <img
           src={selectedData.img}
+          loading="lazy"
           className={`absolute w-[40%] top-[35%] right-8 transition-opacity duration-300 ${
             isAnimating ? "opacity-0" : "opacity-100"
+            
           }`}
           alt={selectedData.title1}
         />
