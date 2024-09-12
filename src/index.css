@@ -1,0 +1,91 @@
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #222;
+    --dark-grey-ababab: #ababab;
+    --light-grey: #f4f4f4;
+    --navy-00067c: #00067c;
+    --white: white;
+    --midnight-blue-010a51: #010a51;
+    --midnight-blue-00063f: #00063f;
+    --relume-library-lite-rl-white: white;
+    --relume-library-lite-rl-black: black;
+    --gold-yellow-f0ca4e: #f0ca4e;
+    --mid-grey-e1e1e1: #e1e1e1;
+    --color: transparent;
+}
+
+body {
+    color: #333;
+    background-color: #fff;
+    min-height: 100%; 
+     margin: 0; 
+     font-family: "Montserrat", Sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+}
+h1 {
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;   
+    line-height: 1.2;
+}
+.text-weight-normal {
+    font-weight: 400;
+}
+.text-weight-light {
+    font-weight: 300;
+}
+
+
+
+.title-tag-tab.blue-grad {
+     background-image: linear-gradient(88deg, var(--midnight-blue-010a51), #e1e1e1); 
+     padding: .5rem 2rem;
+    font-weight: 700;
+}
+.nextcss{
+    font-family: Worksans, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+.terminatest-font {
+  font-family: Terminatest, sans-serif;
+  color:#03063f;
+}
+@keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+
+  @keyframes scrollReverse {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .animate-scroll-reverse {
+    animation: scrollReverse 50s linear infinite;
+  }
