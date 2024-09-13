@@ -22,15 +22,15 @@ export default function HomeVideo() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-white font-serif font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight mb-6 tracking-wide animate-fadeInUp opacity-0 delay-100">
-              <span className="block mb-2">CRAFTING</span>
-              <span className="block mb-2">TRANSFORMATIVE</span>
+              <span className="block mb-2">EVENT MANAGEMENT</span>
+              <span className="block mb-2">LEADER IN</span>
               <span className="relative inline-block">
-                EXPERIENCES
+                KSA
                 <span className="absolute -bottom-2 left-0 w-1/2 h-1 bg-yellow-400 animate-expand"></span>
               </span>
             </h1>
             <p className="text-yellow-400 font-light text-xl sm:text-2xl mt-8 animate-fadeInUp opacity-0 delay-200">
-              Event Management Leader In KSA
+              Crafting transformative experiences
             </p>
             <p className="text-white font-light text-lg sm:text-xl mt-4 animate-fadeInUp opacity-0 delay-300">
               Saudi Event Expert - A Division of Planning Lab
