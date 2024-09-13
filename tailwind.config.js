@@ -7,6 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
+       
         sepia: {
           100: '#F4E6D4',
           200: '#E6D0B8',
@@ -15,15 +16,27 @@ export default {
         },
       },
       animation: {
-        'scroll': 'scroll 40s linear infinite',
+        fadeInUp: 'fadeInUp 1s ease-out forwards',
+        expand: 'expand 1s ease-out forwards',
+        scrollBounce: 'scrollBounce 1.5s infinite',
+
       },
       keyframes: {
-        scroll: {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' },
-        }
-      }
+        fadeInUp: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        expand: {
+          '0%': { width: '0' },
+          '100%': { width: '100%' },
+        },
+        scrollBounce: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(10px)' },
+        },
+      },
     },
   },
+  variants: {},
   plugins: [],
 }

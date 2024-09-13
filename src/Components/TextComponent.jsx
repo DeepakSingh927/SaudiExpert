@@ -22,10 +22,10 @@ export default function EventSolutionsComponent() {
         </h2>
        </div>
        <p className='text-xl w-[80%] text-gray-500'>
-       Eventana is an integrated event management and brand activation agency, established in 2007 and based in Riyadh, Saudi Arabia. We provide planning, development, management, organization, implementation, and evaluation of events and below-the-line promotional activities of all varieties.
+       Saudi Event Expert is an integrated event management and brand activation agency, established in 2007 and based in Riyadh, Saudi Arabia. We specialize in planning, developing, managing, organizing, executing, and evaluating a wide variety of events and below-the-line promotional activities.
        </p>
        <p className='text-xl w-[80%] text-gray-500'>
-       At Eventana , we aim to provide the highest quality service that guarantees maximum client satisfaction through our values of honesty and transparency in dealing with clients, punctuality on meeting deadlines and competitively priced services. We constantly review and appraise our own performance to assure that your event is perfect.
+       At Saudi Event Expert, we are committed to delivering top-notch service that ensures maximum client satisfaction. Our core values of integrity and transparency guide our interactions with clients, while our adherence to deadlines and competitive pricing reflect our dedication to excellence. We continuously assess and enhance our performance to guarantee that your event exceeds expectations.
        </p>
 
       </div>

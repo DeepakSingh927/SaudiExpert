@@ -11,9 +11,15 @@ const navItems = [
   { label: "Contact", path: "/contact-us" }
 ];
 
+const languages = [
+  { code: "en", name: "English", flag: "/Assests/america.png" }, 
+  { code: "ar", name: "العربية", flag: "/Assests/saudi.png" }
+];
+
 export default function Navbar({ language, setLanguage }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,9 +36,16 @@ export default function Navbar({ language, setLanguage }) {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const toggleLanguage = () => {
-    setLanguage((prevLang) => (prevLang === "en" ? "ar" : "en"));
+  const toggleLangDropdown = () => {
+    setIsLangDropdownOpen(!isLangDropdownOpen);
   };
+
+  const changeLanguage = (langCode) => {
+    setLanguage(langCode);
+    setIsLangDropdownOpen(false);
+  };
+
+  const currentLang = languages.find(lang => lang.code === language);
 
   return (
     <div className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white text-black shadow-md" : "bg-transparent text-white"}`}>
@@ -42,24 +55,43 @@ export default function Navbar({ language, setLanguage }) {
             <div className="flex space-x-6">
               <div className="flex items-center font-bold space-x-2">
                 <Mail size={16} />
-                <span className="text-sm">hello@planninglabs.in</span>
+                <span className="text-sm">hello@saudievent.in</span>
               </div>
               <div className="flex items-center font-bold space-x-2">
                 <Phone size={16} />
-                <span className="text-sm">(+91) 84339-04441</span>
+                <span className="text-sm">(+971) 501234567</span>
               </div>
             </div>
-            <div className="flex items-center space-x-2">
-              <button onClick={toggleLanguage} className="text-sm font-bold">
-                {language === "en" ? "Switch to Arabic" : "Switch to English"}
+            <div className="relative">
+              <button 
+                onClick={toggleLangDropdown} 
+                className="flex items-center space-x-2 text-sm font-bold focus:outline-none"
+              >
+                <img src={currentLang.flag} alt={`${currentLang.name} flag`} className="w-4 h-4" /> 
+                <span>{currentLang.name}</span>
+                <ChevronDown size={16} />
               </button>
+              {isLangDropdownOpen && (
+                <div className="absolute right-0 mt-2 w-40 bg-white shadow-lg rounded-md overflow-hidden z-50">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => changeLanguage(lang.code)}
+                      className=" w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center space-x-2"
+                    >
+                      <img src={lang.flag} alt={`${lang.name} flag`} className="w-4 h-4" />
+                      <span>{lang.name}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         )}
         <nav className={`flex justify-between items-center py-4`}>
           <div className={`text-2xl font-bold ${isScrolled ? "text-black" : "text-white"}`}>
             <div className="text-4xl font-extrabold">
-              {language === "en" ? "Saudi Event Agency" : "وكالة الأحداث السعودية"}
+              {language === "en" ? "SAUDI EVENT EXPERT" : "وكالة الأحداث السعودية"}
             </div>
           </div>
           <div className="hidden md:flex space-x-6">
