@@ -99,7 +99,7 @@ export default function Navbar({ language, setLanguage }) {
               <Link
                 key={item.label}
                 to={item.path}
-                className={`text-sm hover:text-[#00adee] font-bold ${isScrolled ? "text-black hover:text-[#00adee]" : "text-white"}`}
+                className={`text-sm hover:text-yellow-300 font-bold ${isScrolled ? "text-black hover:text-yellow-300" : "text-white"}`}
               >
                 {language === "en" ? item.label : getArabicTranslation(item.label)}
               </Link>

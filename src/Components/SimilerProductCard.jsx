@@ -6,15 +6,7 @@ export default function SimilerProductCard({ dataArray }) {
 
   const selectedData = dataArray.find((data) => data.key === selectedTab);
 
-  const handleTabClick = (key) => {
-    if (key !== selectedTab) {
-      setIsAnimating(true);
-      setTimeout(() => {
-        setSelectedTab(key);
-        setIsAnimating(false);
-      }, 300);
-    }
-  };
+ 
 
   const backgroundStyle = {
     backgroundImage: `url(${selectedData.bgImage})`,
@@ -46,32 +38,12 @@ export default function SimilerProductCard({ dataArray }) {
 
             <div className="inline-block p-1 border-black border-2 mt-8">
               <span className="text-xl text-white bg-[#00063f] inline-block font-bold p-2">
-                View similar products →
+                Know More →
               </span>
             </div>
           </div>
 
-          <div className="mt-10">
-            <ul className="flex space-x-4 text-sm uppercase justify-center align-center cursor-pointer">
-              {dataArray.map((item, index) => (
-                <React.Fragment key={item.key}>
-                  <li
-                    onClick={() => handleTabClick(item.key)}
-                    className={`${
-                      selectedTab === item.key
-                        ? "text-blue-600 font-bold"
-                        : "text-blue-600"
-                    } transition-colors duration-300`}
-                  >
-                    {item.key.charAt(0).toUpperCase() + item.key.slice(1)}
-                  </li>
-                  {index < dataArray.length - 1 && (
-                    <li className="border-r border-blue-900 h-7"></li>
-                  )}
-                </React.Fragment>
-              ))}
-            </ul>
-          </div>
+      
         </div>
       </div>
 

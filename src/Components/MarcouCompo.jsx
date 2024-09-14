@@ -176,103 +176,82 @@
 //       </div> */}
 
    
-
 import React, { useState } from "react";
 
 const MarcouCompo = () => {
   const imgArr2 = [
     {
-            colorImage:"/Assests/11.png",
-            blackAndWhiteImage: "/Assests/a.png"
-            
-          },
-          {
-            colorImage:"/Assests/12.png",
-            blackAndWhiteImage: "/Assests/b.png"
-            
-          },
-          {
-            colorImage:"/Assests/13.png",
-            blackAndWhiteImage: "/Assests/c.png"
-            
-          },
-          {
-            colorImage:"/Assests/14.png",
-            blackAndWhiteImage: "/Assests/d.png"
-            
-          },
-          {
-            colorImage: "/Assests/15.png",
-            blackAndWhiteImage: "/Assests/e.png"
-            
-          },
-          {
-            colorImage:"/Assests/16.png",
-            blackAndWhiteImage: "/Assests/f.png"
-            
-          },
-          {
-            colorImage: "/Assests/17.png",
-            blackAndWhiteImage: "/Assests/g.png"
-            
-          },
-          {
-            colorImage:"/Assests/18.png",
-            blackAndWhiteImage: "/Assests/h.png"
-            
-          },
-          {
-            colorImage: "/Assests/19.png",
-            blackAndWhiteImage: "/Assests/i.png"
-            
-          },
-          {
-            colorImage:"/Assests/20.png",
-            blackAndWhiteImage: "/Assests/j.png"
-            
-          },
-          {
-            colorImage: "/Assests/21.png",
-            blackAndWhiteImage:  "/Assests/k.png"
-            
-          },
-          {
-            colorImage:"/Assests/22.png",
-            blackAndWhiteImage: "/Assests/l.png"
-            
-          },
-          {
-            colorImage:"/Assests/23.png",
-            blackAndWhiteImage: "/Assests/m.png"
-            
-          },
-          {
-            colorImage: "/Assests/24.png",
-            blackAndWhiteImage: "/Assests/n.png"
-            
-          },
-          {
-            colorImage:"/Assests/25.png",
-            blackAndWhiteImage: "/Assests/o.png"
-            
-          },
-          {
-            colorImage:"/Assests/26.png",
-            blackAndWhiteImage:"/Assests/p.png"
-            
-          },
-          {
-            colorImage:"/Assests/27.png",
-            blackAndWhiteImage: "/Assests/r.png"
-            
-          },
-          {
-            colorImage:"/Assests/28.png",
-            blackAndWhiteImage:"/Assests/s.png"
-            
-          },
-      
-      
+      colorImage: "/Assests/11.png",
+      blackAndWhiteImage: "/Assests/a.png"
+    },
+    {
+      colorImage: "/Assests/12.png",
+      blackAndWhiteImage: "/Assests/b.png"
+    },
+    {
+      colorImage: "/Assests/13.png",
+      blackAndWhiteImage: "/Assests/c.png"
+    },
+    {
+      colorImage: "/Assests/14.png",
+      blackAndWhiteImage: "/Assests/d.png"
+    },
+    {
+      colorImage: "/Assests/15.png",
+      blackAndWhiteImage: "/Assests/e.png"
+    },
+    {
+      colorImage: "/Assests/16.png",
+      blackAndWhiteImage: "/Assests/f.png"
+    },
+    {
+      colorImage: "/Assests/17.png",
+      blackAndWhiteImage: "/Assests/g.png"
+    },
+    {
+      colorImage: "/Assests/18.png",
+      blackAndWhiteImage: "/Assests/h.png"
+    },
+    {
+      colorImage: "/Assests/19.png",
+      blackAndWhiteImage: "/Assests/i.png"
+    },
+    {
+      colorImage: "/Assests/20.png",
+      blackAndWhiteImage: "/Assests/j.png"
+    },
+    {
+      colorImage: "/Assests/21.png",
+      blackAndWhiteImage: "/Assests/k.png"
+    },
+    {
+      colorImage: "/Assests/22.png",
+      blackAndWhiteImage: "/Assests/l.png"
+    },
+    {
+      colorImage: "/Assests/23.png",
+      blackAndWhiteImage: "/Assests/m.png"
+    },
+    {
+      colorImage: "/Assests/24.png",
+      blackAndWhiteImage: "/Assests/n.png"
+    },
+    {
+      colorImage: "/Assests/25.png",
+      blackAndWhiteImage: "/Assests/o.png"
+    },
+    {
+      colorImage: "/Assests/26.png",
+      blackAndWhiteImage: "/Assests/p.png"
+    },
+    {
+      colorImage: "/Assests/27.png",
+      blackAndWhiteImage: "/Assests/r.png"
+    },
+    {
+      colorImage: "/Assests/28.png",
+      blackAndWhiteImage: "/Assests/s.png"
+    },
   ];
 
   const half = Math.ceil(imgArr2.length / 2);
@@ -303,9 +282,18 @@ const MarcouCompo = () => {
   };
 
   return (
-    <div className="relative z-10 bg-white overflow-hidden">
-      <div className="relative z-20 py-16">
-        <h2 className="text-4xl font-serif text-center mb-8">OUR CLIENTS</h2>
+    <div className="relative z-10  overflow-hidden">
+      <div
+        className="relative z-20 py-16"
+        style={{
+          backgroundImage: "url('/Assests/saudi-al-ula.jpg')",
+          backgroundAttachment: "fixed",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat"
+        }}
+      >
+        <h2 className="text-4xl font-bold text-center mb-8 text-white">OUR CLIENTS</h2>
         <div className="relative overflow-hidden">
           <div className="flex flex-col gap-4">
             <div className="flex animate-scroll">
@@ -319,8 +307,8 @@ const MarcouCompo = () => {
               ))}
             </div>
           </div>
-          <div className="absolute top-0 left-0 w-64 h-full bg-gradient-to-r from-white via-white to-transparent pointer-events-none"></div>
-          <div className="absolute top-0 right-0 w-64 h-full bg-gradient-to-l from-white via-white to-transparent pointer-events-none"></div>
+          {/* <div className="absolute top-0 left-0 w-64 h-full bg-gradient-to-r from-white via-white to-transparent pointer-events-none"></div>
+          <div className="absolute top-0 right-0 w-64 h-full bg-gradient-to-l from-white via-white to-transparent pointer-events-none"></div> */}
         </div>
       </div>
     </div>
