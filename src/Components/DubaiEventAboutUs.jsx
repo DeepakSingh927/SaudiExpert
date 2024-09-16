@@ -23,8 +23,11 @@ export default function DubaiEventAboutUs({ companyData }) {
    
 
   return (
-    <div className=" relative z-50 min-h-screen bg-gradient-to-r from-[#f7e7ce]  to-[#f0f0f0] text-[#333] p-8">
-      <div className="max-w-6xl mx-auto">
+    <div className=" relative z-50 min-h-screen bg-gradient-to-r from-[#f7e7ce]  to-[#f0f0f0] text-[#333] p-8"
+    >
+      <div className="max-w-6xl mx-auto"
+          
+      >
         <motion.h1 
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}

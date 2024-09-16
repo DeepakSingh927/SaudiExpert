@@ -12,6 +12,7 @@ import FourImageCard from "../Components/FourImageCard";
 import FooterCard from "../Components/FooterCard";
 import DubaiEventAboutUs from "../Components/DubaiEventAboutUs";
 import Counter from "../Components/Counter ";
+import OurSevices from "../Components/OurSevices";
 
 export default function Home() {
   const dataArray = [
@@ -20,6 +21,7 @@ export default function Home() {
       id: 1,
       title1: "ABOUT US",
       spanTitle: "Saudi Event Expert:",
+     
       h1Title: "Crafting Memorable Moments",
       des: "We transform visions into unforgettable experiences. Our expert team blends creativity, precision, and local insight to elevate every event, from corporate functions to cultural celebrations across Saudi Arabia.",
       rightTitle: "Our Promise",
@@ -31,7 +33,9 @@ export default function Home() {
   ];
   const companyData = {
     name: "Saudi Event Experts",
-    tagline: "Crafting Unforgettable Experiences in the Heart of Dubai",
+    middlename:["Event","DegitleMArketing,Blogger"],
+    tagline: " CRAFTING UNFORGETTABLE EXPERIENCES INN THE HEART OF SAUDI",
+    
     description:
       "With years of experience in Dubai's dynamic event industry, we specialize in creating bespoke experiences that leave lasting impressions. From corporate gatherings to cultural celebrations, our team brings creativity, precision, and local insight to every event we manage.",
     imageUrl: "/path-to-your-image.jpg",
@@ -55,7 +59,9 @@ export default function Home() {
         <TextComponent />
         <Counter/>
         <MainCard />
+        <OurSevices/>
         <WorldMap />
+      
         {/* <CustomDivider /> */}
         {/* <FourImageCard /> */}
         <FooterCard />
