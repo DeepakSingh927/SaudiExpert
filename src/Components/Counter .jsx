@@ -36,7 +36,7 @@ const Counter = () => {
     useEffect(() => {
       if (visible) {
         let start = 0;
-        const duration = 2000; 
+        const duration = 3000; 
         const increment = endValue / (duration / 10);
 
         const animate = () => {

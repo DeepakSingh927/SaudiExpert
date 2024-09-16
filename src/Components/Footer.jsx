@@ -264,7 +264,7 @@ export default function Footer() {
           <h1 className='text-4xl sm:text-5xl lg:text-[5.3rem] text-[#212121] font-bold mb-8 lg:mb-12'>PRESENTATIONS</h1>
           <div className='space-y-8 lg:space-y-12'>
             <div>
-              <h3 className='font-semibold mb-2'>S:</h3>
+              <h3 className='text-xl font-bold mb-2'>Social Media :</h3>
               <ul className='space-y-1 underline'>
                 <li><a href="#" className='hover:underline'>Instagram</a></li>
                 <li><a href="#" className='hover:underline'>Behance</a></li>
@@ -275,12 +275,12 @@ export default function Footer() {
 
             <div className='flex flex-col sm:flex-row justify-between items-center'>
               <div className='mb-4 sm:mb-0'>
-                <h3 className='font-bold mb-2'>ADDRESS:</h3>
+                <h3 className='text-xl font-bold mb-2'>ADDRESS :</h3>
                 <p>202-1965 W 4th Ave<br />Vancouver, Canada</p>
                 <p className='mt-4'>30 Chukarina St<br />Lviv, Ukraine</p>
               </div>
               <div className='mt-4 sm:mt-0'>
-                <h3 className='font-semibold mb-2'>M:</h3>
+                <h3 className='text-xl font-bold mb-2'>Main Links :</h3>
                 <ul className='space-y-1 underline'>
                   <li><a href="#" className='hover:underline'>Home</a></li>
                   <li><a href="#" className='hover:underline'>Services</a></li>
@@ -294,7 +294,7 @@ export default function Footer() {
 
             <div className='flex flex-col sm:flex-row justify-between items-start sm:items-center'>
               <div className='mb-4 sm:mb-0'>
-                <h3 className=''>E:</h3>
+                <h3 className='text-xl font-bold'>E:</h3>
                 <a href="mailto:hello@saudi-event.design" className='hover:underline text-[#888787] font-sans text-base lg:text-lg'>hello@saudi-event.design</a>
               </div>
               <div className='text-[#888787] font-sans text-base lg:text-lg mt-4 sm:mt-0'>
