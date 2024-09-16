@@ -273,7 +273,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div className='flex flex-col sm:flex-row justify-between'>
+            <div className='flex flex-col sm:flex-row justify-between items-center'>
               <div className='mb-4 sm:mb-0'>
                 <h3 className='font-bold mb-2'>ADDRESS:</h3>
                 <p>202-1965 W 4th Ave<br />Vancouver, Canada</p>
