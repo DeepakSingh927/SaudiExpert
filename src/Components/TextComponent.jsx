@@ -195,7 +195,6 @@
 //     </div>
 //   );
 // }
-
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronRight, ChevronDown, Check } from "lucide-react";
@@ -213,11 +212,11 @@ const eventTypes = [
 const services = [
   "Exhibitions Services",
   "Event Services",
-  "Degitial Marketing",
+  "Digital Marketing",
   "Branding & Promotion",
 ];
 
-export default function FullyInteractiveEventSolutions() {
+export default function EnhancedEventSolutions() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -230,13 +229,13 @@ export default function FullyInteractiveEventSolutions() {
   }, []);
 
   return (
-    <div className="w-full bg-gradient-to-b from-[#f4f4f4] to-white py-20">
+    <div className="w-full bg-gradient-to-br from-yellow-100 via-green-100 to-yellow-100 py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-5xl font-bold text-center mb-16"
+          className="text-6xl font-bold text-center mb-16 text-yellow-500 drop-shadow-lg"
         >
           Saudi Arabia's Premier Event Solutions
         </motion.h1>
@@ -248,7 +247,7 @@ export default function FullyInteractiveEventSolutions() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
-                className="text-2xl font-extrabold mb-4"
+                className="text-2xl font-extrabold mb-4 text-green-600"
               >
                 EVENT SOLUTIONS FOR
               </motion.h2>
@@ -261,9 +260,8 @@ export default function FullyInteractiveEventSolutions() {
                   transition={{ duration: 0.5 }}
                   className="absolute"
                 >
-                  <span className="text-5xl font-bold text-red-600">
-                    {eventTypes[currentIndex].icon}{" "}
-                    {eventTypes[currentIndex].name}
+                  <span className="text-5xl font-bold text-yellow-500">
+                    {eventTypes[currentIndex].icon} {eventTypes[currentIndex].name}
                   </span>
                 </motion.div>
               </AnimatePresence>
@@ -275,9 +273,7 @@ export default function FullyInteractiveEventSolutions() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="bg-white rounded-xl shadow-2xl p-8 space-y-6"
             >
-              <h3 className="text-2xl font-semibold">
-                Explore Our Event Types
-              </h3>
+              <h3 className="text-2xl font-semibold text-green-600">Explore Our Event Types</h3>
               <div className="grid grid-cols-2 gap-4">
                 {eventTypes.map((event, index) => (
                   <motion.button
@@ -286,8 +282,8 @@ export default function FullyInteractiveEventSolutions() {
                     whileTap={{ scale: 0.95 }}
                     className={`p-4 rounded-lg text-left transition-colors ${
                       selectedEvent === index
-                        ? "bg-red-600 text-white"
-                        : "bg-gray-100 text-gray-800"
+                        ? "bg-yellow-400 text-white"
+                        : "bg-gray-100 text-gray-800 hover:bg-green-100"
                     }`}
                     onClick={() => setSelectedEvent(index)}
                     aria-pressed={selectedEvent === index}
@@ -301,66 +297,50 @@ export default function FullyInteractiveEventSolutions() {
           </div>
 
           <div className="space-y-8">
-            {/* Replace "About Saudi Event Expert" with "How We Work" */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
               className="bg-white rounded-xl shadow-2xl p-8 space-y-6"
             >
-              <h3 className="text-2xl font-semibold text-gray-800">
-                How We Work
-              </h3>
+              <h3 className="text-2xl font-semibold text-green-600">How We Work</h3>
               <p className="text-gray-600">
-                Our approach is rooted in understanding the unique needs of
-                every client and event. From initial consultation to event
-                execution, we take a personalized approach that focuses on
-                attention to detail, efficiency, and creativity. Every event is
-                meticulously planned to ensure it meets and exceeds
-                expectations.
+                Our approach focuses on understanding the unique needs of every client and event.
+                From consultation to execution, we prioritize attention to detail, efficiency, and creativity.
               </p>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center space-x-2 text-red-600 font-semibold"
+                className="flex items-center space-x-2 text-yellow-500 font-semibold"
               >
                 <span>Learn More About Our Process</span>
                 <ChevronRight size={20} />
               </motion.button>
             </motion.div>
 
-            {/* Replace "Our Commitment" with "What is Different in Us" */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-red-600 text-white rounded-xl shadow-2xl p-8 space-y-6"
+              className="bg-green-600 text-white rounded-xl shadow-2xl p-8 space-y-6"
             >
-              <h3 className="text-2xl font-semibold">
-                What is Different in Us
-              </h3>
+              <h3 className="text-2xl font-semibold">What is Different in Us</h3>
               <p>
-                Our passion for events and dedication to client satisfaction
-                sets us apart. We offer personalized services that adapt to your
-                specific needs and vision, backed by a team of experts who are
-                always up-to-date with the latest trends and innovations in the
-                event industry. We believe in delivering not just events, but
-                unforgettable experiences.
+                We go beyond just planning events—we create unforgettable experiences.
+                Our team is always up-to-date with the latest trends, ensuring your event is innovative and impactful.
               </p>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
-                className="flex items-center justify-between w-full bg-white text-red-600 rounded-lg px-4 py-2 font-semibold"
+                className="flex items-center justify-between w-full bg-white text-green-600 rounded-lg px-4 py-2 font-semibold"
                 aria-expanded={isServicesOpen}
               >
                 <span>Our Services</span>
                 <ChevronDown
                   size={20}
                   style={{
-                    transform: isServicesOpen
-                      ? "rotate(180deg)"
-                      : "rotate(0deg)",
+                    transform: isServicesOpen ? "rotate(180deg)" : "rotate(0deg)",
                     transition: "transform 0.3s ease-in-out",
                   }}
                 />

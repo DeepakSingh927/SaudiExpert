@@ -160,19 +160,22 @@
 //   );
 // }
 
-
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const FlagPopup = ({ country }) => {
   if (!country) return null;
 
   return (
-    <div
-      className="absolute top-36 md:top-40 lg:top-44 flex justify-center items-center left-1/2 transform -translate-x-1/2 z-20 bg-gray-900 rounded-md overflow-hidden shadow-lg"
+    <motion.div
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.8 }}
+      className="absolute top-36 md:top-40 lg:top-44 flex justify-center items-center left-1/2 transform -translate-x-1/2 z-20 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg overflow-hidden shadow-2xl"
       style={{ width: "90%", maxWidth: "380px" }}
     >
       <div className="flex items-center px-5 py-3 w-[50%]">
-        <div className="w-4 h-4 bg-red-500 rounded-full mr-4"></div>
+        <div className="w-4 h-4 bg-yellow-400 rounded-full mr-4 animate-pulse"></div>
         <div className="text-white font-bold uppercase text-sm md:text-lg">
           {country.name}
         </div>
@@ -182,10 +185,10 @@ const FlagPopup = ({ country }) => {
           src={country.img}
           loading="lazy"
           alt={`${country.name} flag`}
-          className="w-full h-auto"
+          className="w-full h-auto rounded-md"
         />
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -208,10 +211,10 @@ export default function WorldMap() {
 
   const gradientStyle = {
     background: `linear-gradient(to bottom,
-      rgba(110, 105, 160, 0.2) 0%,
-      rgba(60, 80, 140, 0.5) 30%,
-      rgba(40, 60, 120, 0.75) 60%,
-      rgba(0, 1, 30, 1) 100%
+      rgba(79, 70, 229, 0.1) ${scrollPercentage}%,
+      rgba(109, 40, 217, 0.4) ${scrollPercentage + 20}%,
+      rgba(124, 58, 237, 0.7) ${scrollPercentage + 40}%,
+      rgba(139, 92, 246, 1) 100%
     )`,
     position: "absolute",
     top: 0,
@@ -219,7 +222,6 @@ export default function WorldMap() {
     right: 0,
     bottom: 0,
     pointerEvents: "none",
-    opacity: 0.7 + scrollPercentage / 300,
   };
 
   const dataArray = [
@@ -283,12 +285,22 @@ export default function WorldMap() {
   return (
     <div className="relative flex flex-col items-center justify-center">
       <div className="relative w-full flex flex-col items-center">
-        <p className="text-center text-lg md:text-2xl font-serif uppercase tracking-wider text-blue-900 my-4 md:my-8">
+        <motion.p
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center text-lg md:text-2xl  uppercase tracking-wider text-indigo-600 my-4 md:my-8"
+        >
           Saudi Event making an impact across the world
-        </p>
-        <h2 className="text-center text-2xl md:text-4xl lg:text-5xl font-extrabold uppercase tracking-widest text-blue-900">
+        </motion.p>
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-center text-2xl md:text-4xl lg:text-5xl font-extrabold uppercase tracking-widest text-purple-800"
+        >
           The trusted global standard
-        </h2>
+        </motion.h2>
         <div className="relative">
           <img
             src="/Assests/8.jpg"
@@ -297,15 +309,17 @@ export default function WorldMap() {
             className="w-full h-screen object-cover"
           />
           {dataArray.map((country) => (
-            <div
+            <motion.div
               key={country.id}
-              className="absolute w-2 h-2 md:w-3 md:h-3 z-50 bg-white rounded-full hover:bg-red-900 cursor-pointer"
+              className="absolute w-2 h-2 md:w-3 md:h-3 z-50 bg-yellow-400 rounded-full hover:bg-red-500 cursor-pointer"
               style={{
                 top: positionMap[country.id]?.top || "0%",
                 left: positionMap[country.id]?.left || "0%",
               }}
               onMouseEnter={() => handleDotHover(country.id)}
               onMouseLeave={handleDotLeave}
+              whileHover={{ scale: 1.5 }}
+              whileTap={{ scale: 0.9 }}
             />
           ))}
         </div>

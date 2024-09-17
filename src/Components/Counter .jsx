@@ -62,13 +62,13 @@ const Counter = () => {
       ref={counterRef}
       className="counter-section bg-cover bg-fixed"
       style={{
-        backgroundImage: `url('/Assests/RIYADH.jpg')`,
+        backgroundImage: `url('/Assests/Water-tower.webp')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "fixed",
       }}
     >
-      <div className="container mx-auto py-24 text-center text-white">
+      <div className="container mx-auto py-28 text-center text-white">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {counters.map((counter, index) => (
             <div key={index} className="counter-box flex flex-col items-center">

@@ -7,35 +7,17 @@ import WorldMap from "../Components/WorldMap";
 import TextComponent from "../Components/TextComponent";
 import Footer from "../Components/Footer";
 import MainCard from "../Components/MainCard";
-import CustomDivider from "../Components/CustomDiv";
-import FourImageCard from "../Components/FourImageCard";
 import FooterCard from "../Components/FooterCard";
 import DubaiEventAboutUs from "../Components/DubaiEventAboutUs";
 import Counter from "../Components/Counter ";
 import OurSevices from "../Components/OurSevices";
 
 export default function Home() {
-  const dataArray = [
-    {
-      key: "production",
-      id: 1,
-      title1: "ABOUT US",
-      spanTitle: "Saudi Event Expert:",
-     
-      h1Title: "Crafting Memorable Moments",
-      des: "We transform visions into unforgettable experiences. Our expert team blends creativity, precision, and local insight to elevate every event, from corporate functions to cultural celebrations across Saudi Arabia.",
-      rightTitle: "Our Promise",
-      rightDes:
-        "Meticulous detail, cultural finesse, and innovative solutions that make your event extraordinary.",
-      img: "/Assests/1.jpg",
-      bgImage: "/Assests/2.jpg",
-    },
-  ];
   const companyData = {
     name: "Saudi Event Experts",
-    middlename:["Event","DegitleMArketing,Blogger"],
+    middlename: ["Event", "DegitleMArketing,Blogger"],
     tagline: " CRAFTING UNFORGETTABLE EXPERIENCES INN THE HEART OF SAUDI",
-    
+
     description:
       "With years of experience in Dubai's dynamic event industry, we specialize in creating bespoke experiences that leave lasting impressions. From corporate gatherings to cultural celebrations, our team brings creativity, precision, and local insight to every event we manage.",
     imageUrl: "/path-to-your-image.jpg",
@@ -48,23 +30,33 @@ export default function Home() {
       <div className="relative">
         <Navbar language={language} setLanguage={setLanguage} />
         <HomeVideo />
-        <div className="relative z-10 min-h-screen bg-white">
-          {/* <SimilerProductCard dataArray={dataArray} /> */}
+        <div className="relative z-10 min-h-screen bg-white" id="about-us">
           <DubaiEventAboutUs companyData={companyData} />
         </div>
       </div>
 
       <MarcouCompo />
-      <div className="relative z-10  bg-white  ">
+
+      <div className="relative z-10  bg-white " id="about-us">
         <TextComponent />
-        <Counter/>
+      </div>
+      <div className="relative z-10  bg-white  ">
+        <Counter />
+      </div>
+      <div className="relative z-10  bg-white  " id="Featured-Projects">
         <MainCard />
-        <OurSevices/>
+      </div>
+      <div className="relative z-10  bg-white  " id="services">
+        <OurSevices />
+      </div>
+      <div className="relative z-10  bg-white  " >
         <WorldMap />
-      
-        {/* <CustomDivider /> */}
-        {/* <FourImageCard /> */}
+      </div>
+      <div className="relative z-10  bg-white  " id="contact-us">
         <FooterCard />
+      </div>
+
+      <div className="relative z-10  bg-white  ">
         <Footer />
       </div>
     </>

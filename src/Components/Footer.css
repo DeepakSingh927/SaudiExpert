@@ -1,0 +1,55 @@
+.deepak {
+    font-family: MyCustomFont;
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center; 
+    height: 120px;
+    width: 400px;
+    padding-left:2%;
+  }
+  
+  .pera {
+    padding-left: 2%;
+    margin-top: 6%;
+    width: 49vw;
+    text-align: left;
+  }
+  
+  .company {
+    position: absolute;
+    left: 60%;
+    top: 20%;
+    text-align: left;
+  }
+  .services {
+    position: absolute;
+    right: 5%;
+    top: 20%;
+    text-align: left;
+  }
+  .deep {
+    display: flex;
+  
+  }
+  .coloum1 {
+    display: flex;
+    flex-direction: column;
+    justify-items: start;
+    align-items: start;
+  }
+  .icons {
+    left: 4%;
+    font-size: 1.7em;
+    bottom: 30%;
+  }
+  .icon {
+    padding-left: 0.8vw;
+  }
+  .copyright {
+    margin-top: 5%;
+    border-top: 1px solid grey;
+    height: 5vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }

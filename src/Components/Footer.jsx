@@ -241,69 +241,118 @@
 //     </footer>
 //   );
 // }
-import React from 'react'
 
-export default function Footer() {
+
+import React from "react";
+import "./Footer.css";
+export default function () {
   return (
-    <div className='w-full flex justify-center items-center bg-[#f1f1f1] text-black py-8 px-4 sm:py-12'>
-      <div className='w-full max-w-7xl flex flex-col lg:flex-row justify-between'>
-        <div className='w-full lg:w-[50%] mb-8 lg:mb-0 flex flex-col'>
-          <h1 className='text-4xl sm:text-5xl text-[#212121]  lg:text-[5.3rem] font-extrabold mb-4 lg:mb-8'>EYE-<br className="hidden sm:inline" />OPENING</h1>
-          <div className='w-full sm:w-[80%] h-64 sm:h-96 bg-white border border-gray-300 flex items-center justify-center'>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1632.3380078509665!2d55.357061374897235!3d25.28456134685277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5ceeee0a04e1%3A0xfe0a7b6f2fd4e315!2sDubai%20-%20Sharjah%20Rd%20-%20United%20Arab%20Emirates!5e1!3m2!1sen!2sin!4v1726037964727!5m2!1sen!2sin"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-            ></iframe>
+    <footer className="bg-black text-white py-14 h-full">
+      <div className="deep">
+        <div className="coloum1 ">
+          <div className="logo">
+            {/* <img src="/Assests/eventana.png" alt="" className="deepak" /> */}
+            <h1>SAUDI EVENT EXPERT</h1>
+          </div>
+
+          <div className="w-[50vw] mt-16">
+            <h3 className=" pera ">
+              Don’t hesitate to drop us a line if you need consultancy with your
+              project, our team will always be there to help you reach your goal
+              by proposing the right choices to reach your goal.
+            </h3>
+          </div>
+
+          <div className=" icons mt-4 text-center">
+            <div className=" flex justify-center mt-2 space-x-2">
+              <a href="#" className="icon text-gray-300 hover:text-white">
+                <i className="fab fa-instagram"></i>
+              </a>
+              <a href="#" className="icon text-gray-300 hover:text-white">
+                <i className="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" className="icon text-gray-300 hover:text-white">
+                <i className="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" className="icon text-gray-300 hover:text-white">
+              <i class="fa-brands fa-x-twitter"></i>
+              </a>
+            </div>
           </div>
         </div>
-        <div className='w-full lg:w-[50%] flex flex-col justify-between mt-8 lg:mt-0'>
-          <h1 className='text-4xl sm:text-5xl lg:text-[5.3rem] text-[#212121] font-bold mb-8 lg:mb-12'>PRESENTATIONS</h1>
-          <div className='space-y-8 lg:space-y-12'>
-            <div>
-              <h3 className='text-xl font-bold mb-2'>Social Media :</h3>
-              <ul className='space-y-1 underline'>
-                <li><a href="#" className='hover:underline'>Instagram</a></li>
-                <li><a href="#" className='hover:underline'>Behance</a></li>
-                <li><a href="#" className='hover:underline'>Facebook</a></li>
-                <li><a href="#" className='hover:underline'>Linkedin</a></li>
-              </ul>
-            </div>
-
-            <div className='flex flex-col sm:flex-row justify-between items-center'>
-              <div className='mb-4 sm:mb-0'>
-                <h3 className='text-xl font-bold mb-2'>ADDRESS :</h3>
-                <p>202-1965 W 4th Ave<br />Vancouver, Canada</p>
-                <p className='mt-4'>30 Chukarina St<br />Lviv, Ukraine</p>
+        <div className="coloum2">
+          {" "}
+          <div className="flex  flex-col md:flex-row justify-between">
+            <div className="flex flex-col md:flex-row space-x-4">
+              <div className="company">
+                <h3 className="text-2xl font-semibold mb-2">Company</h3>
+                <ul className="space-y-4">
+                  <li>
+                    <a href="#" className="hover:text-gray-300">
+                      Home
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-gray-300">
+                      About Us
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-gray-300">
+                      Our   Services
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-gray-300">
+                      Featured Projects
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-gray-300">
+                      Join Us
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-gray-300">
+                      Contact
+                    </a>
+                  </li>
+                </ul>
               </div>
-              <div className='mt-4 sm:mt-0'>
-                <h3 className='text-xl font-bold mb-2'>Main Links :</h3>
-                <ul className='space-y-1 underline'>
-                  <li><a href="#" className='hover:underline'>Home</a></li>
-                  <li><a href="#" className='hover:underline'>Services</a></li>
-                  <li><a href="#" className='hover:underline'>Our work</a></li>
-                  <li><a href="#" className='hover:underline'>About us</a></li>
-                  <li><a href="#" className='hover:underline'>Insights</a></li>
-                  <li><a href="#" className='hover:underline'>Contact us</a></li>
+              <div className="services">
+                <h3 className="text-2xl font-semibold mb-2">Services</h3>
+                <ul className="space-y-4">
+                  <li>
+                    <a href="#" className="hover:text-gray-300">
+                    Exhibition Services
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-gray-300">
+                    Event Services
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-gray-300">
+                    Branding & Promotion
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-gray-300">
+                    Digital Marketing
+                    </a>
+                  </li>
+                 
                 </ul>
               </div>
             </div>
-
-            <div className='flex flex-col sm:flex-row justify-between items-start sm:items-center'>
-              <div className='mb-4 sm:mb-0'>
-                <h3 className='text-xl font-bold'>E:</h3>
-                <a href="mailto:hello@saudi-event.design" className='hover:underline text-[#888787] font-sans text-base lg:text-lg'>hello@saudi-event.design</a>
-              </div>
-              <div className='text-[#888787] font-sans text-base lg:text-lg mt-4 sm:mt-0'>
-                WenSite-by C4E
-              </div>
-            </div>
           </div>
         </div>
+        
       </div>
-    </div>
-  )
+      <div className=" copyright text-gray-400">
+          Copyright © 2024 Eventana Services.
+        </div>
+    </footer>
+  );
 }

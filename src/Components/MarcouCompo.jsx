@@ -1,17 +1,19 @@
 import React from "react";
 
-
 const MarcouCompo = () => {
   const imgArr = [
-    "/Assests/80.png", "/Assests/81.png", "/Assests/82.png", "/Assests/83.png",
-    "/Assests/84.png", "/Assests/85.png", "/Assests/87.png", "/Assests/88.png",
-   "/Assests/89.png","/Assests/90.jpg","/Assests/88.png",
+    "/Assests/80.png",
+    "/Assests/81.png",
+    "/Assests/82.png",
+    "/Assests/83.png",
+    "/Assests/84.png",
+    "/Assests/85.png",
+    "/Assests/87.png",
+    "/Assests/88.png",
+    "/Assests/89.png",
+    "/Assests/90.jpg",
+    "/Assests/88.png",
   ];
-
-
- 
-
-
 
   const half = Math.ceil(imgArr.length / 2);
   const firstHalf = imgArr.slice(0, half);
@@ -19,17 +21,20 @@ const MarcouCompo = () => {
 
   return (
     <div className="relative z-10 bg-white overflow-hidden">
-      <div className="relative z-20 py-12"
-       
-              // style={{
-              //    backgroundImage: "url('/Assests/saudi-al-ula.jpg')",
-              //    backgroundAttachment: "fixed",
-              //   backgroundPosition: "center",
-              //    backgroundSize: "cover",
-              //    backgroundRepeat: "no-repeat"
-              //  }}
-              >
-        <h2 className="text-4xl font-serif text-center text-white mb-8">OUR CLIENTS</h2>
+      <div
+        className="relative z-20 "
+
+        // style={{
+        //    backgroundImage: "url('/Assests/saudi-al-ula.jpg')",
+        //    backgroundAttachment: "fixed",
+        //   backgroundPosition: "center",
+        //    backgroundSize: "cover",
+        //    backgroundRepeat: "no-repeat"
+        //  }}
+      >
+        <h2 className="text-4xl font-serif text-center text-white mb-8">
+          OUR CLIENTS
+        </h2>
         <div className="relative overflow-hidden">
           <div className="flex flex-col ">
             <div className="flex animate-scroll">
@@ -39,7 +44,7 @@ const MarcouCompo = () => {
                     <div className="w-full h-full overflow-hidden border-4 border-white border-opacity-30">
                       <img
                         src={img}
-                        alt={`Client ${index % firstHalf.length + 1}`}
+                        alt={`Client ${(index % firstHalf.length) + 1}`}
                         className="w-full h-full object-contain"
                         loading="lazy"
                       />
@@ -56,7 +61,7 @@ const MarcouCompo = () => {
                       <img
                         src={img}
                         loading="lazy"
-                        alt={`Client ${index % secondHalf.length + half + 1}`}
+                        alt={`Client ${(index % secondHalf.length) + half + 1}`}
                         className="w-full h-full object-contain"
                       />
                     </div>
@@ -72,7 +77,7 @@ const MarcouCompo = () => {
 };
 
 export default MarcouCompo;
-   
+
 // import React, { useState } from "react";
 
 // const MarcouCompo = () => {

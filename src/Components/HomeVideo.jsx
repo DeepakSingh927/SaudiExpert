@@ -32,11 +32,11 @@ export default function HomeVideo() {
           <p className="font-lato text-white font-light text-lg sm:text-xl mt-4 animate-fadeInUp opacity-0 delay-300">
             Saudi Event Expert - A Division of Planning Labs
           </p>
-          <Link to="#services" >
+          <a href="#services" >
           <button className="font-poppins mt-12 px-8 py-3 bg-yellow-400 text-black font-semibold text-lg rounded-full hover:bg-white hover:text-yellow-400 transition duration-300 animate-fadeInUp opacity-0 delay-400">
             Explore Our Services
           </button>
-          </Link>
+          </a>
           
         </div>
       </div>

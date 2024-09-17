@@ -12,19 +12,28 @@ export default {
         'poppins': ['Poppins', 'sans-serif'],
       },
       colors: {
-       
         sepia: {
           100: '#F4E6D4',
           200: '#E6D0B8',
           300: '#D9BA9C',
           800: '#5C4D3C',
         },
+        saudiGreen: {
+          100: '#E6F3EC',
+          200: '#C2E0D0',
+          300: '#9ECCB4',
+          400: '#74B897',  // lighter green
+          500: '#1da964',  // main Saudi green
+          600: '#179A58',
+          700: '#128A4D',
+          800: '#0C7941',
+          900: '#065D31',
+        },
       },
       animation: {
         fadeInUp: 'fadeInUp 1s ease-out forwards',
         expand: 'expand 1s ease-out forwards',
         scrollBounce: 'scrollBounce 1.5s infinite',
-
       },
       keyframes: {
         fadeInUp: {

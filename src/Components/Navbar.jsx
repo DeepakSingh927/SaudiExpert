@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Mail, Phone, ChevronDown, Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const navItems = [
   { label: "Home", path: "/" },
-  { label: "About Us", path: "/about-us" },
-  { label: "Our Services", path: "/our-services" },
-  { label: "Featured Projects", path: "/feature-projects" },
-  { label: "Join Us", path: "/join-us" },
-  { label: "Contact", path: "/contact-us" }
+  { label: "About Us", path: "#about-us" },
+  { label: "Our Services", path: "#services" },
+  { label: "Featured Projects", path: "#Featured-Projects" },
+  { label: "Join Us", path: "#contact-us" },
+  { label: "Contact", path: "#contact-us" }
 ];
 
 const languages = [
-  { code: "en", name: "English", flag: "/Assests/america.png" }, 
-  { code: "ar", name: "العربية", flag: "/Assests/saudi.png" }
+  { code: "en", name: "English", flag: "/Assets/america.png" },
+  { code: "ar", name: "العربية", flag: "/Assets/saudi.png" }
 ];
 
 export default function Navbar({ language, setLanguage }) {
@@ -45,10 +44,14 @@ export default function Navbar({ language, setLanguage }) {
     setIsLangDropdownOpen(false);
   };
 
-  const currentLang = languages.find(lang => lang.code === language);
+  const currentLang = languages.find((lang) => lang.code === language);
 
   return (
-    <div className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white text-black shadow-md" : "bg-transparent text-white"}`}>
+    <div
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? "bg-green-600 text-white shadow-md" : "bg-transparent text-white"
+      }`}
+    >
       <div className="container mx-auto px-4">
         {!isScrolled && (
           <div className="hidden md:flex justify-between items-center pt-4">
@@ -63,11 +66,15 @@ export default function Navbar({ language, setLanguage }) {
               </div>
             </div>
             <div className="relative">
-              <button 
-                onClick={toggleLangDropdown} 
+              <button
+                onClick={toggleLangDropdown}
                 className="flex items-center space-x-2 text-sm font-bold focus:outline-none"
               >
-                <img src={currentLang.flag} alt={`${currentLang.name} flag`} className="w-4 h-4" /> 
+                <img
+                  src={currentLang.flag}
+                  alt={`${currentLang.name} flag`}
+                  className="w-4 h-4"
+                />
                 <span>{currentLang.name}</span>
                 <ChevronDown size={16} />
               </button>
@@ -77,9 +84,13 @@ export default function Navbar({ language, setLanguage }) {
                     <button
                       key={lang.code}
                       onClick={() => changeLanguage(lang.code)}
-                      className=" w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center space-x-2"
+                      className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center space-x-2"
                     >
-                      <img src={lang.flag} alt={`${lang.name} flag`} className="w-4 h-4" />
+                      <img
+                        src={lang.flag}
+                        alt={`${lang.name} flag`}
+                        className="w-4 h-4"
+                      />
                       <span>{lang.name}</span>
                     </button>
                   ))}
@@ -88,21 +99,27 @@ export default function Navbar({ language, setLanguage }) {
             </div>
           </div>
         )}
-        <nav className={`flex justify-between items-center py-4`}>
-          <div className={`text-2xl font-bold ${isScrolled ? "text-black" : "text-white"}`}>
+        <nav className="flex justify-between items-center py-4">
+          <div
+            className={`text-2xl font-bold ${
+              isScrolled ? "text-white" : "text-white"
+            }`}
+          >
             <div className="text-4xl font-extrabold">
               {language === "en" ? "SAUDI EVENT EXPERT" : "وكالة الأحداث السعودية"}
             </div>
           </div>
           <div className="hidden md:flex space-x-6">
             {navItems.map((item) => (
-              <Link
+              <a
                 key={item.label}
-                to={item.path}
-                className={`text-sm hover:text-yellow-300 font-bold ${isScrolled ? "text-black hover:text-yellow-300" : "text-white"}`}
+                href={item.path}
+                className={`text-sm hover:text-yellow-300 font-bold ${
+                  isScrolled ? "text-white hover:text-yellow-300" : "text-white"
+                }`}
               >
                 {language === "en" ? item.label : getArabicTranslation(item.label)}
-              </Link>
+              </a>
             ))}
           </div>
           <div className="md:hidden">
@@ -114,13 +131,15 @@ export default function Navbar({ language, setLanguage }) {
         {isMenuOpen && (
           <div className="md:hidden">
             {navItems.map((item) => (
-              <Link
+              <a
                 key={item.label}
-                to={item.path}
-                className={`block py-2 text-sm hover:text-[#00adee] font-bold ${isScrolled ? "text-black hover:text-[#00adee]" : "text-white"}`}
+                href={item.path}
+                className={`block py-2 text-sm hover:text-[#00adee] font-bold ${
+                  isScrolled ? "text-white hover:text-[#00adee]" : "text-white"
+                }`}
               >
                 {language === "en" ? item.label : getArabicTranslation(item.label)}
-              </Link>
+              </a>
             ))}
           </div>
         )}
