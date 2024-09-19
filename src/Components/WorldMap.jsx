@@ -289,7 +289,7 @@ export default function WorldMap() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center text-lg md:text-2xl  uppercase tracking-wider text-indigo-600 my-4 md:my-8"
+          className=" heading text-center text-lg md:text-2xl  uppercase tracking-wider text-indigo-600 my-4 md:my-8"
         >
           Saudi Event making an impact across the world
         </motion.p>
@@ -297,7 +297,7 @@ export default function WorldMap() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-center text-2xl md:text-4xl lg:text-5xl font-extrabold uppercase tracking-widest text-purple-800"
+          className=" heading text-center text-2xl md:text-4xl lg:text-5xl font-extrabold uppercase tracking-widest text-purple-800"
         >
           The trusted global standard
         </motion.h2>

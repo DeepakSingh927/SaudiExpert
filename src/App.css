@@ -1,0 +1,31 @@
+
+@font-face {
+  font-family: 'customfont';
+  src: url('../src/Components/Font/ArabianNight-CommercialUsed.ttf') format('woff2'),
+       /* url('/Font/ArabianNight-CommercialUsed.woff') format('woff'),
+       url('/Font/ArabianNight-CommercialUsed.ttf') format('truetype')*/; 
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'heading';
+  src: url('../src/Components/Font/heading.woff2');
+}
+@font-face {
+  font-family: 'para';
+  src: url('../src/Components/Font/pera.woff2');
+}
+
+.check{
+  font-family: 'customfont';
+
+}
+.heading{
+  font-family: 'heading';
+}
+.para{
+  font-family: 'para';
+  
+}

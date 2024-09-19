@@ -16,12 +16,12 @@ export default function Home() {
   const companyData = {
     name: "Saudi Event Experts",
     middlename: ["Event", "DegitleMArketing,Blogger"],
-    tagline: " CRAFTING UNFORGETTABLE EXPERIENCES INN THE HEART OF SAUDI",
+    tagline:"Crafting unforgettable experiences in the heart of Saudi ",
 
     description:
       "With years of experience in Dubai's dynamic event industry, we specialize in creating bespoke experiences that leave lasting impressions. From corporate gatherings to cultural celebrations, our team brings creativity, precision, and local insight to every event we manage.",
-    imageUrl: "/path-to-your-image.jpg",
-    imageCaption: "Bringing your vision to life in Dubai's most iconic venues",
+    imageUrl: ["/Assests/1001.webp","/Assests/1002.webp","/Assests/1003.webp","/Assests/1004.webp",],
+    imageCaption: "Bringing your vision to life in Saudi's most iconic venues",
   };
 
   const [language, setLanguage] = useState("en");
@@ -34,9 +34,10 @@ export default function Home() {
           <DubaiEventAboutUs companyData={companyData} />
         </div>
       </div>
+      <div className="relative z-10  bg-white " >
 
       <MarcouCompo />
-
+      </div>
       <div className="relative z-10  bg-white " id="about-us">
         <TextComponent />
       </div>

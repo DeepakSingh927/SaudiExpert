@@ -7,12 +7,12 @@ const navItems = [
   { label: "Our Services", path: "#services" },
   { label: "Featured Projects", path: "#Featured-Projects" },
   { label: "Join Us", path: "#contact-us" },
-  { label: "Contact", path: "#contact-us" }
+  { label: "Contact", path: "#contact-us" },
 ];
 
 const languages = [
-  { code: "en", name: "English", flag: "/Assets/america.png" },
-  { code: "ar", name: "العربية", flag: "/Assets/saudi.png" }
+  { code: "en", name: "English", flag: "/Assests/america.png" },
+  { code: "ar", name: "العربية", flag: "/Assests/saudi.png" }
 ];
 
 export default function Navbar({ language, setLanguage }) {
@@ -47,9 +47,13 @@ export default function Navbar({ language, setLanguage }) {
   const currentLang = languages.find((lang) => lang.code === language);
 
   return (
+    <>
+    
     <div
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-green-600 text-white shadow-md" : "bg-transparent text-white"
+        isScrolled
+          ? "bg-black text-[#cdab56] shadow-md"
+          : "bg-transparent text-[#cdab56]"
       }`}
     >
       <div className="container mx-auto px-4">
@@ -57,14 +61,15 @@ export default function Navbar({ language, setLanguage }) {
           <div className="hidden md:flex justify-between items-center pt-4">
             <div className="flex space-x-6">
               <div className="flex items-center font-bold space-x-2">
-                <Mail size={16} />
+                <Mail size={16} color="#d2ab2f" />
                 <span className="text-sm">hello@saudievent.in</span>
               </div>
               <div className="flex items-center font-bold space-x-2">
-                <Phone size={16} />
+                <Phone size={16} color="#d2ab2f" />
                 <span className="text-sm">(+971) 501234567</span>
               </div>
             </div>
+
             <div className="relative">
               <button
                 onClick={toggleLangDropdown}
@@ -76,15 +81,15 @@ export default function Navbar({ language, setLanguage }) {
                   className="w-4 h-4"
                 />
                 <span>{currentLang.name}</span>
-                <ChevronDown size={16} />
+                <ChevronDown size={16} color="#d2ab2f" />
               </button>
               {isLangDropdownOpen && (
-                <div className="absolute right-0 mt-2 w-40 bg-white shadow-lg rounded-md overflow-hidden z-50">
+                <div className="  font-poppins  absolute right-0 mt-2 w-40 bg-black border border-[#cdab56] rounded-md overflow-hidden z-50">
                   {languages.map((lang) => (
                     <button
                       key={lang.code}
                       onClick={() => changeLanguage(lang.code)}
-                      className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center space-x-2"
+                      className="  font-poppins  w-full text-left px-4 py-2 text-sm text-[#cdab56] hover:bg-[#cdab56] hover:text-black flex items-center space-x-2"
                     >
                       <img
                         src={lang.flag}
@@ -100,51 +105,54 @@ export default function Navbar({ language, setLanguage }) {
           </div>
         )}
         <nav className="flex justify-between items-center py-4">
-          <div
-            className={`text-2xl font-bold ${
-              isScrolled ? "text-white" : "text-white"
-            }`}
-          >
-            <div className="text-4xl font-extrabold">
-              {language === "en" ? "SAUDI EVENT EXPERT" : "وكالة الأحداث السعودية"}
-            </div>
+          <div className="text-4xl font-extrabold text-[#cdab56]">
+            {language === "en"
+              ? "SAUDI EVENT EXPERT"
+              : "وكالة الأحداث السعودية"}
           </div>
           <div className="hidden md:flex space-x-6">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.path}
-                className={`text-sm hover:text-yellow-300 font-bold ${
-                  isScrolled ? "text-white hover:text-yellow-300" : "text-white"
-                }`}
+                className=" font-poppins text-sm font-bold text-[#cdab56] hover:text-white relative group"
               >
-                {language === "en" ? item.label : getArabicTranslation(item.label)}
+                {language === "en"
+                  ? item.label
+                  : getArabicTranslation(item.label)}
+                <span className="  absolute left-0 bottom-0 w-full h-0.5 bg-[#cdab56] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
               </a>
             ))}
           </div>
           <div className="md:hidden">
             <button onClick={toggleMenu} className="focus:outline-none">
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? (
+                <X size={24} color="#d2ab2f" />
+              ) : (
+                <Menu size={24} color="#d2ab2f" />
+              )}
             </button>
           </div>
         </nav>
         {isMenuOpen && (
-          <div className="md:hidden">
+          <div className="md:hidden bg-black">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.path}
-                className={`block py-2 text-sm hover:text-[#00adee] font-bold ${
-                  isScrolled ? "text-white hover:text-[#00adee]" : "text-white"
-                }`}
+                className="block py-2 text-sm hover:text-white font-bold text-[#cdab56] relative group"
               >
-                {language === "en" ? item.label : getArabicTranslation(item.label)}
+                {language === "en"
+                  ? item.label
+                  : getArabicTranslation(item.label)}
+                <span className="absolute left-0 bottom-0 w-full h-0.5 bg-[#cdab56] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
               </a>
             ))}
           </div>
         )}
       </div>
     </div>
+    </>
   );
 }
 

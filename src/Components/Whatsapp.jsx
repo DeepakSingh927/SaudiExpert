@@ -36,7 +36,7 @@ export default function Whatsapp() {
 
   return (
     <div className="fixed bottom-4 right-4 z-50">
-      <div className="absolute inset-0 bg-green-400 rounded-full animate-ping opacity-75"></div>
+      <div className="absolute inset-0 bg-yellow-400 rounded-full animate-ping opacity-75"></div>
       <button 
         ref={buttonRef}
         onClick={handleWhatsAppClick}

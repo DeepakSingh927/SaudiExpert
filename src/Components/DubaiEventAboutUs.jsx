@@ -1,87 +1,87 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Sparkles, Calendar, Users, Award } from "lucide-react";
+import { Sparkles, Calendar, Users, Award, ArrowRight } from "lucide-react";
+import ImageCube from "../Components/ImageCube .jsx";
 
 const eventTypes = [
   {
-    icon: <Sparkles className="w-8 h-8" />,
+    icon: <Sparkles className="w-8 h-8 md:w-12 md:h-12" />,
     name: "Luxurious Galas",
-    description:
-      "Elevate your gala with unparalleled elegance and sophistication.",
+    description: "Elevate your gala with unparalleled elegance and sophistication.",
   },
   {
-    icon: <Calendar className="w-8 h-8" />,
+    icon: <Calendar className="w-8 h-8 md:w-12 md:h-12" />,
     name: "Corporate Events",
-    description:
-      "Impress clients and motivate teams with our world-class corporate events.",
+    description: "Impress clients and motivate teams with our world-class corporate events.",
   },
   {
-    icon: <Users className="w-8 h-8" />,
+    icon: <Users className="w-8 h-8 md:w-12 md:h-12" />,
     name: "Cultural Celebrations",
-    description:
-      "Honor traditions and create new memories with our culturally-rich events.",
+    description: "Honor traditions and create new memories with our culturally-rich events.",
   },
   {
-    icon: <Award className="w-8 h-8" />,
+    icon: <Award className="w-8 h-8 md:w-12 md:h-12" />,
     name: "Award Ceremonies",
-    description:
-      "Recognize excellence with our meticulously planned award ceremonies.",
+    description: "Recognize excellence with our meticulously planned award ceremonies.",
   },
 ];
 
-export default function SaudiEventExpert({ companyData }) {
+export default function DubaiEventAboutUs({ companyData }) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % eventTypes.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
+    if (!isHovering) {
+      const timer = setInterval(() => {
+        setActiveIndex((prevIndex) => (prevIndex + 1) % eventTypes.length);
+      }, 5000);
+      return () => clearInterval(timer);
+    }
+  }, [isHovering]);
 
   return (
-    <div className="relative z-50 min-h-screen bg-gradient-to-r from-yellow-100 to-green-100 text-gray-800 p-8">
-      <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
-          <h1 className="text-6xl font-extrabold text-yellow-400 relative inline-block transform perspective-1000 rotateX-10 shadow-3d">
-            {companyData.name}
-          </h1>
-        </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <div className="relative z-50 min-h-screen bg-[#173a24] text-white p-4 md:p-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="space-y-6"
+            className="lg:col-span-2 space-y-6 md:space-y-8"
           >
-            <h2 className="text-3xl font-semibold text-green-600">
+            <h2 className="heading text-3xl md:text-4xl font-semibold text-white">
               {companyData.tagline}
             </h2>
-            <p className="text-lg">{companyData.description}</p>
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-semibold mb-4 text-yellow-400">
+            <p className="para text-white">{companyData.description}</p>
+            
+            <div className="bg-[#004E25] p-6 md:p-8 rounded-2xl shadow-2xl">
+              <h3 className="heading text-2xl md:text-3xl font-semibold mb-4 md:mb-6 text-white">
                 Our Expertise
               </h3>
-              <ul className="space-y-4">
+              <div 
+                className="grid grid-cols-2 gap-4 md:gap-6"
+                onMouseEnter={() => setIsHovering(true)}
+                onMouseLeave={() => setIsHovering(false)}
+              >
                 {eventTypes.map((type, index) => (
-                  <motion.li
+                  <motion.div
                     key={type.name}
-                    className={`flex items-center space-x-3 p-2 rounded ${
-                      index === activeIndex ? "bg-green-500 text-white" : ""
+                    className={`flex flex-col items-center justify-center p-4 md:p-6 rounded-xl transition-all duration-300 ${
+                      index === activeIndex ? "bg-[#9ee772] text-[#006C35]" : "bg-[#004E25] text-white"
                     }`}
-                    animate={{ scale: index === activeIndex ? 1.05 : 1 }}
-                    transition={{ duration: 1 }}
+                    animate={{ 
+                      scale: index === activeIndex ? 1.05 : 1,
+                      rotate: index === activeIndex ? 360 : 0
+                    }}
+                    transition={{ duration: 0.2 }}
+                    onClick={() => setActiveIndex(index)}
                   >
                     {type.icon}
-                    <span>{type.name}</span>
-                  </motion.li>
+                    <h4 className="heading text-lg md:text-xl font-bold mt-3 md:mt-4 mb-2">{type.name}</h4>
+                    <p className="para text-xs md:text-sm text-center">{type.description}</p>
+                  </motion.div>
                 ))}
-              </ul>
+              </div>
             </div>
           </motion.div>
 
@@ -89,17 +89,13 @@ export default function SaudiEventExpert({ companyData }) {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="relative"
+            className="relative h-[400px] md:h-[500px] lg:h-full"
           >
-            <img
-              src={companyData.imageUrl}
-              alt="Saudi Event Showcase"
-              className="w-full h-[500px] object-cover rounded-lg shadow-2xl"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
-              <p className="text-white text-xl font-semibold">
-                {companyData.imageCaption}
-              </p>
+            <div className="sticky top-8 w-full h-[80%]">
+              <ImageCube 
+                images={companyData.imageUrl} 
+                caption={companyData.imageCaption}
+              />
             </div>
           </motion.div>
         </div>
@@ -108,19 +104,22 @@ export default function SaudiEventExpert({ companyData }) {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="mt-12 text-center"
+          className="mt-12 md:mt-16 text-center"
         >
-          <h3 className="text-2xl font-semibold mb-4 text-green-600">
+          <h3 className="text-2xl md:text-3xl font-semibold mb-4 md:mb-6 text-white">
             Ready to create an unforgettable event?
           </h3>
-          <a
+          <motion.a
             href="https://wa.me/9967253567"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-yellow-400 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-green-500 transition duration-300"
+            className="inline-flex items-center bg-white text-[#006C35] px-6 md:px-8 py-3 md:py-4 rounded-full text-lg md:text-xl font-bold hover:bg-[#b18d1e] transition duration-300"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             Contact Us
-          </a>
+            <ArrowRight className="ml-2 w-5 h-5 md:w-6 md:h-6" />
+          </motion.a>
         </motion.div>
       </div>
     </div>

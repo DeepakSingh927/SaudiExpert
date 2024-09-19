@@ -195,6 +195,7 @@
 //     </div>
 //   );
 // }
+
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronRight, ChevronDown, Check } from "lucide-react";
@@ -229,25 +230,25 @@ export default function EnhancedEventSolutions() {
   }, []);
 
   return (
-    <div className="w-full bg-gradient-to-br from-yellow-100 via-green-100 to-yellow-100 py-20">
+    <div className="w-full bg-black py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-6xl font-bold text-center mb-16 text-yellow-500 drop-shadow-lg"
+          className=" heading text-6xl font-bold text-center mb-16 text-[#bc9a4c] drop-shadow-lg"
         >
           Saudi Arabia's Premier Event Solutions
         </motion.h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div className="space-y-12">
-            <div className="relative h-32">
+            <div className="  relative h-32">
               <motion.h2
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
-                className="text-2xl font-extrabold mb-4 text-green-600"
+                className=" heading text-2xl font-extrabold mb-4 text-[#bc9a4c]"
               >
                 EVENT SOLUTIONS FOR
               </motion.h2>
@@ -260,7 +261,7 @@ export default function EnhancedEventSolutions() {
                   transition={{ duration: 0.5 }}
                   className="absolute"
                 >
-                  <span className="text-5xl font-bold text-yellow-500">
+                  <span className="text-5xl font-bold text-white">
                     {eventTypes[currentIndex].icon} {eventTypes[currentIndex].name}
                   </span>
                 </motion.div>
@@ -271,19 +272,19 @@ export default function EnhancedEventSolutions() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-white rounded-xl shadow-2xl p-8 space-y-6"
+              className="bg-gray-900 rounded-xl shadow-2xl p-8 space-y-6"
             >
-              <h3 className="text-2xl font-semibold text-green-600">Explore Our Event Types</h3>
+              <h3 className=" heading text-2xl font-semibold text-[#bc9a4c]">Explore Our Event Types</h3>
               <div className="grid grid-cols-2 gap-4">
                 {eventTypes.map((event, index) => (
                   <motion.button
                     key={event.name}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`p-4 rounded-lg text-left transition-colors ${
+                    className={`p-4 para rounded-lg text-left transition-colors ${
                       selectedEvent === index
-                        ? "bg-yellow-400 text-white"
-                        : "bg-gray-100 text-gray-800 hover:bg-green-100"
+                        ? "bg-[#bc9a4c] text-black"
+                        : "bg-gray-800 text-white hover:bg-gray-700"
                     }`}
                     onClick={() => setSelectedEvent(index)}
                     aria-pressed={selectedEvent === index}
@@ -301,17 +302,17 @@ export default function EnhancedEventSolutions() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="bg-white rounded-xl shadow-2xl p-8 space-y-6"
+              className="bg-gray-900 rounded-xl shadow-2xl p-8 space-y-6"
             >
-              <h3 className="text-2xl font-semibold text-green-600">How We Work</h3>
-              <p className="text-gray-600">
+              <h3 className=" heading text-2xl font-semibold text-[#bc9a4c]">How We Work</h3>
+              <p className="para text-gray-300">
                 Our approach focuses on understanding the unique needs of every client and event.
                 From consultation to execution, we prioritize attention to detail, efficiency, and creativity.
               </p>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center space-x-2 text-yellow-500 font-semibold"
+                className="flex items-center space-x-2 text-[#bc9a4c] font-semibold"
               >
                 <span>Learn More About Our Process</span>
                 <ChevronRight size={20} />
@@ -322,10 +323,10 @@ export default function EnhancedEventSolutions() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-green-600 text-white rounded-xl shadow-2xl p-8 space-y-6"
+              className="bg-[#bc9a4c] text-black rounded-xl shadow-2xl p-8 space-y-6"
             >
-              <h3 className="text-2xl font-semibold">What is Different in Us</h3>
-              <p>
+              <h3 className=" heading text-2xl font-semibold">What is Different in Us</h3>
+              <p className="para">
                 We go beyond just planning events—we create unforgettable experiences.
                 Our team is always up-to-date with the latest trends, ensuring your event is innovative and impactful.
               </p>
@@ -333,10 +334,10 @@ export default function EnhancedEventSolutions() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
-                className="flex items-center justify-between w-full bg-white text-green-600 rounded-lg px-4 py-2 font-semibold"
+                className="flex items-center justify-between w-full bg-black text-[#bc9a4c] rounded-lg px-4 py-2 font-semibold"
                 aria-expanded={isServicesOpen}
               >
-                <span>Our Services</span>
+                <span className="heading">Our Services</span>
                 <ChevronDown
                   size={20}
                   style={{
@@ -352,7 +353,7 @@ export default function EnhancedEventSolutions() {
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="space-y-2 mt-4 max-h-40 overflow-y-auto"
+                    className=" para space-y-2 mt-4 max-h-40 overflow-y-auto"
                   >
                     {services.map((service, index) => (
                       <motion.li
