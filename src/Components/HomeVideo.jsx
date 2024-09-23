@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import vid from "/Assests/Home.mp4";
+import vid from "/Assests/home.mp4";
 import { Link } from "react-router-dom";
 
 const AnimatedSingleWord = ({ words }) => {
@@ -50,7 +50,7 @@ export default function HomeVideo() {
           playsInline
           className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto transform -translate-x-1/2 -translate-y-1/2 object-cover"
         />
-        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-90"></div>
       </div>
       <div className="fixed top-17 inset-0 flex items-center justify-center z-10">
         <div className="text-center px-4 sm:px-6 lg:px-8">
@@ -63,8 +63,8 @@ export default function HomeVideo() {
             </span>
           </h1>
 
-          <p className=" para font-lato text-[#cdab56] font-light text-xl sm:text-2xl mt-8 animate-fadeInUp opacity-0 delay-200">
-            One Of The Best Event <span className="text-white font-bold">Exhibitions</span> In Saudi
+          <p className="font-lato text-[#cdab56] font-light text-xl sm:text-2xl mt-8 animate-fadeInUp opacity-0 delay-200">
+          Crafting Transformative Experiences
           </p>
           
           <a href="https://planninglabs.in/" target="blank">
@@ -82,7 +82,7 @@ export default function HomeVideo() {
       <div className="absolute bottom-4 flex justify-center w-full">
         <div className="flex flex-col items-center">
           <div className="relative h-16 w-12 border-2 border-[#cdab56] rounded-3xl flex justify-center items-center">
-            <div className="h-4 w-2 bg-[#004E25] rounded-full animate-bounce"></div>
+            <div className="h-4 w-2 bg-[#967c3a] rounded-full animate-bounce"></div>
           </div>
           <p className="text-white mt-2">Scroll</p>
         </div>

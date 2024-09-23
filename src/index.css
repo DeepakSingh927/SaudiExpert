@@ -139,3 +139,14 @@ body {
 }
 
 
+::-webkit-scrollbar{
+  width:8px
+}
+
+::-webkit-scrollbar-track{
+  background: #000;
+}
+::-webkit-scrollbar-thumb{
+  background:#cdab56;
+}
+
