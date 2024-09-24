@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import vid from "/Assests/home.mp4";
+import vid from "/Assests/header4.mp4";
 import { Link } from "react-router-dom";
 
 const AnimatedSingleWord = ({ words }) => {
@@ -50,7 +50,7 @@ export default function HomeVideo() {
           playsInline
           className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto transform -translate-x-1/2 -translate-y-1/2 object-cover"
         />
-        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-90"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50"></div>
       </div>
       <div className="fixed top-17 inset-0 flex items-center justify-center z-10">
         <div className="text-center px-4 sm:px-6 lg:px-8">

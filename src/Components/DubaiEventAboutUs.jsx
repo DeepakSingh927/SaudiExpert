@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import { Sparkles, Calendar, Users, Award } from "lucide-react";
-import AOS from 'aos';
-import './animation.css'
-import 'aos/dist/aos.css'
+import AOS from "aos";
+import "./animation.css";
+import "aos/dist/aos.css";
 const eventTypes = [
   {
     icon: <Sparkles className="w-8 h-8" />,
-    name: "Luxurious Galas",
+    name: "Exhibitions",
     description:
-      "Elevate your gala with unparalleled elegance and sophistication.",
+      "Explore our curated exhibitions showcasing innovative designs and creative talents from around the world.",
   },
   {
     icon: <Calendar className="w-8 h-8" />,
@@ -18,46 +18,40 @@ const eventTypes = [
   },
   {
     icon: <Users className="w-8 h-8" />,
-    name: "Cultural Celebrations",
+    name: "Advertising and Promotion",
     description:
-      "Honor traditions and create new memories with our culturally-rich events.",
+      "Maximize your brand's reach with our targeted advertising and promotion strategies.",
   },
   {
     icon: <Award className="w-8 h-8" />,
-    name: "Award Ceremonies",
+    name: "Digital Marketing",
     description:
-      "Recognize excellence with our meticulously planned award ceremonies.",
+      "Accelerate your growth with our data-driven digital marketing strategies.",
   },
 ];
 
-
-  // useEffect(()=>{
-  //   AOS.init({duration:2000})
-  // },[])
-
-
 export default function AboutUs({ companyData }) {
-  useEffect(()=>{
-    AOS.init({duration:2000})
-  },[])
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
   return (
-    <div 
-      className="bg-[#0a0203] text-white py-16 relative"
+    <div
+      className="bg-[#0a0203] text-white py-16 relative h-screen"
       style={{
-        backgroundImage: "url('/Assests/gold1.png')",
+        backgroundImage: "url('/Assests/RIYADH.jpg')",
         backgroundAttachment: "fixed",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        backgroundSize: "cover"
+        backgroundSize: "cover",
+        loading:"lazy"
       }}
-      
     >
-      <div className="absolute inset-0 bg-[#0a0203] opacity-90"></div>
+      <div className="absolute inset-0 bg-[#0a0203] opacity-30"></div>
       <div className="relative mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <div className="flex flex-col space-y-16 "data-aos="zoom-in">
+        <div className="flex flex-col space-y-16 " data-aos="zoom-in">
           <div className="flex justify-between items-center">
             <div className="w-1/2 pr-8">
-              <h2 className="font-lato  text-3xl font-extrabold text-[#cdab56] sm:text-4xl mb-4">
+              <h2 className="font-sherif text-3xl font-extrabold text-[#cdab56] sm:text-4xl mb-4">
                 {companyData.tagline}
               </h2>
               <p className="text-lg text-gray-300 mb-8 ">
@@ -73,13 +67,14 @@ export default function AboutUs({ companyData }) {
             <div className="w-1/2 relative">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 opacity-50 blur-xl"></div>
               <img
-                className="w-full h-full object-cover relative z-10 rounded-lg"
+                className="w-full h-full object-cover relative z-10 rounded-lg loading:lazy"
                 src={companyData.imageUrl}
                 alt={companyData.imageCaption}
+                
               />
             </div>
           </div>
-          
+
           <div className="w-full">
             <h3 className="text-2xl font-extrabold text-[#cdab56] mb-8">
               Our Expertise
@@ -88,7 +83,7 @@ export default function AboutUs({ companyData }) {
               {eventTypes.map((type) => (
                 <div
                   key={type.name}
-                  className="bg-gray-900 p-6 rounded-lg border border-[#cdab56]"
+                  className="bg-gray-900 p-5 rounded-lg border border-[#cdab56]"
                 >
                   {/* <div className="text-[#cdab56] mb-4">{type.icon}</div> */}
                   <h4 className="text-lg font-semibold mb-2 text-[#cdab56]">

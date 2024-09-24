@@ -10,6 +10,7 @@ import FooterCard from "../Components/FooterCard";
 import DubaiEventAboutUs from "../Components/DubaiEventAboutUs";
 import Counter from "../Components/Counter ";
 import OurSevices from "../Components/OurSevices";
+import AboutCompany from "../Components/AboutCompany";
 
 export default function Home() {
   const companyData = {
@@ -18,7 +19,7 @@ export default function Home() {
     tagline:"Crafting unforgettable experiences in the heart of Saudi ",
 
     description:
-      "With years of experience in Dubai's dynamic event industry, we specialize in creating bespoke experiences that leave lasting impressions. From corporate gatherings to cultural celebrations, our team brings creativity, precision, and local insight to every event we manage.",
+      "With years of experience in Gulf's dynamic event industry, we specialize in creating bespoke experiences that leave lasting impressions. From corporate gatherings to cultural celebrations, our team brings creativity, precision, and local insight to every event we manage.",
     imageUrl: "/Assests/111.jpg",
     imageCaption: "Bringing your vision to life in Saudi's most iconic venues",
   };
@@ -33,10 +34,10 @@ export default function Home() {
           <DubaiEventAboutUs companyData={companyData} />
         </div>
       </div>
-      {/* <div className="relative z-10  bg-white " >
+      <div className="relative z-10  bg-white " >
 
-      <MarcouCompo />
-      </div> */}
+      <AboutCompany/>
+      </div>
       <div className="relative z-10  bg-white " id="about-us">
         <TextComponent />
       </div>

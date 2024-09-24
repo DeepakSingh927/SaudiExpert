@@ -43,10 +43,10 @@ export default function Whatsapp() {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         className={`
-          relative bg-green-500 hover:bg-green-600 text-white rounded-full p-3 
+          relative bg-[#cdab56] hover:bg-[#cda84c] text-white rounded-full p-3 
           shadow-lg transition-all duration-300 flex items-center justify-center
           transform hover:scale-105 animate-float overflow-hidden
-          ${isHovered ? 'ring-4 ring-green-300 ring-opacity-50' : ''}
+          ${isHovered ? 'ring-4 ring-[#cdab56] ring-opacity-50' : ''}
         `}
         aria-label="Contact us on WhatsApp"
       >
