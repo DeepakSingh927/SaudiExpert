@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Sparkles, Calendar, Users, Award } from "lucide-react";
 import AOS from "aos";
 import "./animation.css";
 import "aos/dist/aos.css";
+
 const eventTypes = [
   {
     icon: <Sparkles className="w-8 h-8" />,
@@ -30,46 +31,55 @@ const eventTypes = [
   },
 ];
 
-export default function AboutUs({ companyData }) {
+export default function DubaiEventAboutUs({ companyData }) {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
   useEffect(() => {
     AOS.init({ duration: 2000 });
-  }, []);
+
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        (prevIndex + 1) % companyData.imageUrl.length
+      );
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [companyData.imageUrl.length]);
+
   return (
     <div
-      className="bg-[#0a0203] text-white py-16 relative h-screen"
+      className="bg-[#0a0203] text-white py-16 relative min-h-screen"
       style={{
         backgroundImage: "url('/Assests/RIYADH.jpg')",
         backgroundAttachment: "fixed",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        loading:"lazy"
       }}
     >
       <div className="absolute inset-0 bg-[#0a0203] opacity-30"></div>
       <div className="relative mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <div className="flex flex-col space-y-16 " data-aos="zoom-in">
-          <div className="flex justify-between items-center">
-            <div className="w-1/2 pr-8">
-              <h2 className="font-sherif text-3xl font-extrabold text-[#cdab56] sm:text-4xl mb-4">
+        <div className="flex flex-col space-y-16" data-aos="zoom-in">
+          <div className="flex flex-col lg:flex-row justify-between items-center">
+            <div className="w-full lg:w-1/2 pr-0 lg:pr-8 mb-8 lg:mb-0">
+              <h2 className="font-serif text-3xl font-extrabold text-[#cdab56] sm:text-4xl mb-4">
                 {companyData.tagline}
               </h2>
-              <p className="text-lg text-gray-300 mb-8 ">
+              <p className= " text-lg text-gray-300 mb-8">
                 {companyData.description}
               </p>
               <a
                 href="#contact"
-                className="inline-flex items-center px-6 py-3 border border-[#cdab56] text-base font-medium rounded-full text-black bg-[#cdab56] hover:bg-[#cdab56]-dark transition duration-300"
+                className="inline-flex items-center px-6 py-3 border border-[#cdab56] text-base font-medium rounded-full text-black bg-[#cdab56] hover:bg-[#cdab56] transition duration-300"
               >
                 Contact Us
               </a>
             </div>
-            <div className="w-1/2 relative border-4 border-[#cdab56] ">
+            <div className="w-full lg:w-1/2 relative border-4 border-[#cdab56] rounded-xl">
               <img
-                className="w-full h-full object-cover relative z-10  loading:lazy"
-                src={companyData.imageUrl}
+                className="w-full h-64 rounded-xl lg:h-96 object-cover relative z-10 transition-opacity duration-500"
+                src={companyData.imageUrl[currentImageIndex]}
                 alt={companyData.imageCaption}
-                
               />
             </div>
           </div>
@@ -84,7 +94,6 @@ export default function AboutUs({ companyData }) {
                   key={type.name}
                   className="bg-gray-900 p-5 rounded-lg border border-[#cdab56]"
                 >
-                  {/* <div className="text-[#cdab56] mb-4">{type.icon}</div> */}
                   <h4 className="text-lg font-semibold mb-2 text-[#cdab56]">
                     {type.name}
                   </h4>
