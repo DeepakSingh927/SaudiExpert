@@ -64,10 +64,9 @@ export default function AboutUs({ companyData }) {
                 Contact Us
               </a>
             </div>
-            <div className="w-1/2 relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 opacity-50 blur-xl"></div>
+            <div className="w-1/2 relative border-4 border-[#cdab56] ">
               <img
-                className="w-full h-full object-cover relative z-10 rounded-lg loading:lazy"
+                className="w-full h-full object-cover relative z-10  loading:lazy"
                 src={companyData.imageUrl}
                 alt={companyData.imageCaption}
                 
