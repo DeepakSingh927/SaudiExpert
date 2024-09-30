@@ -1,5 +1,3 @@
-
-
 // // import React from "react";
 // // import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 // // import { FaXTwitter } from "react-icons/fa6";
@@ -207,7 +205,7 @@
 //             </div>
 //           </div>
 //         </div>
-        
+
 //         <div className="mb-8">
 //           <h3 className="font-semibold mb-2">E:</h3>
 //           <a href="mailto:hello@saudi-event.design" className="hover:underline">hello@saudi-event.design</a>
@@ -242,12 +240,11 @@
 //   );
 // }
 
-
 import React from "react";
 import "./Footer.css";
 export default function () {
   return (
-    <footer className="bg-black text-white py-14 h-full">
+    <footer className="bg-black text-[#cdab56] py-14 h-full">
       <div className="deep">
         <div className="coloum1 ">
           <div className="logo">
@@ -256,7 +253,7 @@ export default function () {
           </div>
 
           <div className="w-[50vw] mt-16">
-            <h3 className=" pera ">
+            <h3 className=" pera  ">
               Don’t hesitate to drop us a line if you need consultancy with your
               project, our team will always be there to help you reach your goal
               by proposing the right choices to reach your goal.
@@ -265,17 +262,17 @@ export default function () {
 
           <div className=" icons mt-4 text-center">
             <div className=" flex justify-center mt-2 space-x-2">
-              <a href="#" className="icon text-gray-300 hover:text-white">
+              <a href="#" className="icon text-[#cdab56] hover:text-white">
                 <i className="fab fa-instagram"></i>
               </a>
-              <a href="#" className="icon text-gray-300 hover:text-white">
+              <a href="#" className="icon text-[#cdab56] hover:text-white">
                 <i className="fab fa-linkedin-in"></i>
               </a>
-              <a href="#" className="icon text-gray-300 hover:text-white">
+              <a href="#" className="icon text-[#cdab56] hover:text-white">
                 <i className="fab fa-facebook-f"></i>
               </a>
-              <a href="#" className="icon text-gray-300 hover:text-white">
-              <i class="fa-brands fa-x-twitter"></i>
+              <a href="#" className="icon text-[#cdab56] hover:text-white">
+                <i class="fa-brands fa-x-twitter"></i>
               </a>
             </div>
           </div>
@@ -324,35 +321,33 @@ export default function () {
                 <ul className="space-y-4">
                   <li>
                     <a href="#" className="hover:text-gray-300">
-                    Exhibition Services
+                      Exhibition Services
                     </a>
                   </li>
                   <li>
                     <a href="#" className="hover:text-gray-300">
-                    Event Services
+                      Event Services
                     </a>
                   </li>
                   <li>
                     <a href="#" className="hover:text-gray-300">
-                    Branding & Promotion
+                      Branding & Promotion
                     </a>
                   </li>
                   <li>
                     <a href="#" className="hover:text-gray-300">
-                    Digital Marketing
+                      Digital Marketing
                     </a>
                   </li>
-                 
                 </ul>
               </div>
             </div>
           </div>
         </div>
-        
       </div>
       <div className=" copyright text-gray-400">
-          Copyright © 2024 Eventana Services.
-        </div>
+        Copyright © 2024 Eventana Services.
+      </div>
     </footer>
   );
 }

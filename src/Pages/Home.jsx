@@ -28,7 +28,7 @@ export default function Home() {
 
   const [language, setLanguage] = useState("en");
   return (
-    <>
+    <div className="bg-black">
       <div className="relative">
         <Navbar language={language} setLanguage={setLanguage} />
         <HomeVideo />
@@ -62,6 +62,6 @@ export default function Home() {
       <div className="relative z-10  bg-white  ">
         <Footer />
       </div>
-    </>
+    </div>
   );
 }
