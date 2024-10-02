@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="overflow-x-hidden">
-      <Router>
+      <Router basename="/SaudiExpert">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/" element={<OurSevices />} />

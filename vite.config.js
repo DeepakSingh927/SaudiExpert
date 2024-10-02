@@ -4,8 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  build: {
-    outDir: 'dist',
-  },
-  base: './', // This is important for GitHub Pages
+  base: '/SaudiExpert/', // Update this to match your repo name
 })
