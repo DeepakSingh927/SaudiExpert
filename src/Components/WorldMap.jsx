@@ -1,30 +1,35 @@
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
-const FlagPopup = ({ country }) => {
+const FlagPopup = ({ country, position }) => {
   if (!country) return null;
 
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.8 }}
-      className="absolute top-36 md:top-40 lg:top-44 flex justify-center items-center left-1/2 transform -translate-x-1/2 z-20 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg overflow-hidden shadow-2xl"
-      style={{ width: "90%", maxWidth: "380px" }}
+      initial={{ opacity: 0, scale: 0.8, y: 10 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      exit={{ opacity: 0, scale: 0.8, y: 10 }}
+      className="absolute flex items-center bg-white rounded-lg overflow-hidden shadow-lg"
+      style={{
+        bottom: `calc(100% + 10px)`, // Position above the icon
+        left: '50%',
+        transform: 'translateX(-50%)',
+        zIndex: 20, // Increased z-index to be above icons
+        minWidth: "150px",
+        maxWidth: "200px",
+      }}
     >
-      <div className="flex items-center px-5 py-3 w-[50%]">
-        <div className="w-4 h-4 bg-yellow-400 rounded-full mr-4 animate-pulse"></div>
-        <div className="text-white font-bold uppercase text-sm md:text-lg">
-          {country.name}
-        </div>
-      </div>
-      <div className="p-2 w-[50%]">
+      <div className="p-3 flex items-center w-full">
         <img
           src={country.img}
-          loading="lazy"
           alt={`${country.name} flag`}
-          className="w-full h-auto rounded-md"
+          className="w-10 h-8 object-cover mr-3 flex-shrink-0"
         />
+        <span className="text-black text-sm font-bold truncate">
+          {country.name}
+        </span>
       </div>
     </motion.div>
   );
@@ -32,7 +37,8 @@ const FlagPopup = ({ country }) => {
 
 export default function WorldMap() {
   const [scrollPercentage, setScrollPercentage] = useState(0);
-  const [hoveredCountry, setHoveredCountry] = useState(null);
+  const [highlightedCountry, setHighlightedCountry] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,6 +52,18 @@ export default function WorldMap() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % dataArray.length);
+    }, 2000); // Change highlight every 2 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    setHighlightedCountry(dataArray[currentIndex].id);
+  }, [currentIndex]);
 
   const gradientStyle = {
     background: `linear-gradient(to bottom,
@@ -83,50 +101,40 @@ export default function WorldMap() {
     { id: "Thailand", img: "/Assests/Thailand.webp", name: "Thailand" },
     { id: "HongKong", img: "/Assests/HongKong.webp", name: "HongKong" },
     { id: "India", img: "/Assests/India.webp", name: "India" },
+    { id: "canada", img: "/Assests/canada.png", name: "canada" },
   ];
 
   const positionMap = {
     dubai: { top: "53%", left: "58%" },
-    kuwait: { top: "49%", left: "31%" },
-    Qatar: { top: "51.5%", left: "32%" },
-    oman: { top: "56%", left: "33.5%" },
-    "saudi arabia": { top: "53%", left: "29%" },
-    spain: { top: "40%", left: "5%" },
-    germany: { top: "31%", left: "14%" },
-    sweden: { top: "32%", left: "48.5%" }, //
-    Norway: { top: "22%", left: "12%" },
-    poland: { top: "30%", left: "17%" },
-    Turkey: { top: "41%", left: "23%" },
-    France: { top: "34%", left: "8%" },
+    kuwait: { top: "50%", left: "55.5%" },
+    Qatar: { top: "51.5%", left: "56.5%" },
+    oman: { top: "55%", left: "57.4%" },
+    "saudi arabia": { top: "53%", left: "55%" },
+    spain: { top: "45.5%", left: "45%" },
+    germany: { top: "39%", left: "47.7%" },
+    sweden: { top: "32%", left: "49%" }, //
+    Norway: { top: "35%", left: "47%" },
+    poland: { top: "39.5%", left: "49%" },
+    Turkey: { top: "46.3%", left: "52%" },
+    France: { top: "42.3%", left: "46%" },
     Finland: { top: "32%", left: "50.5%" }, //
-    China: { top: "50%", left: "63%" },
-    Japan: { top: "43%", left: "75%" },
+    China: { top: "50%", left: "68%" },
+    Japan: { top: "46.5%", left: "74.5%" },
     Philippines: { top: "60%", left: "67%" },
-    Singapore: { top: "66%", left: "57%" },
-    Malaysia: { top: "67%", left: "62%" },
-    Indonesia: { top: "71%", left: "68%" },
+    Singapore: { top: "61%", left: "68.2%" },
+    Malaysia: { top: "61%", left: "70.3%" },
+    Indonesia: { top: "63.5%", left: "68.3%" },
     Thailand: { top: "57%", left: "56%" },
-    HongKong: { top: "53.5%", left: "63.3%" },
-    India: { top: "55.7%", left: "43.5%" },
-  };
-
-  const handleDotHover = (countryId) => {
-    setHoveredCountry(countryId);
-  };
-
-  const handleDotLeave = () => {
-    setHoveredCountry(null);
+    HongKong: { top: "53%", left: "70.3%" },
+    India: { top: "52.7%", left: "62.5%" },
+    canada: { top: "38%", left: "28%" },
   };
 
   return (
-    <div className="relative flex flex-col items-center justify-center bg-black py-12 pb-0">
-      {" "}
-      {/* Changed py-24 to py-12 pb-0 */}
-      <div className="relative w-full max-w-8xl mx-auto px-4">
+    <div className="relative flex flex-col items-center justify-center bg-black py-12 pb-0 overflow-hidden">
+      <div className="relative w-full max-w-7xl mx-auto px-4">
         {/* Text above the map */}
         <div className="text-center mb-8">
-          {" "}
-          {/* Reduced mb-12 to mb-8 */}
           <motion.p
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -139,15 +147,13 @@ export default function WorldMap() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="heading text-3xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-widest text-[#cdab56]"
+            className="heading text-2xl md:text-4xl lg:text-5xl font-extrabold uppercase tracking-widest text-[#cdab56]"
           >
             The trusted global standard
           </motion.h2>
         </div>
 
         <div className="relative w-full aspect-[16/9] overflow-hidden rounded-3xl shadow-2xl border-4 border-[#cdab56]">
-          {" "}
-          {/* Added border */}
           <img
             src="/Assests/worldMapp.jpeg"
             alt="World Map"
@@ -159,25 +165,72 @@ export default function WorldMap() {
             }}
           />
           {dataArray.map((country) => (
-            <motion.div
+            <div
               key={country.id}
-              className="absolute w-2 h-2 md:w-3 md:h-3 z-50 bg-blue-100 rounded-full hover:bg-red-500 cursor-pointer"
+              className="absolute"
               style={{
                 top: positionMap[country.id]?.top || "0%",
                 left: positionMap[country.id]?.left || "0%",
+                transform: "translate(-50%, -50%)",
               }}
-              onMouseEnter={() => handleDotHover(country.id)}
-              onMouseLeave={handleDotLeave}
-              whileHover={{ scale: 1.5 }}
-              whileTap={{ scale: 0.9 }}
-            />
+            >
+              <div className="relative"> {/* Added wrapper div */}
+                <motion.div
+                  animate={
+                    highlightedCountry === country.id
+                      ? {
+                          scale: [1, 1.3, 1],
+                          color: ["#FFF7D1", "#FF0000", "#FFF7D1"], // Changed to red
+                          filter: [
+                            "drop-shadow(0 0 0 rgba(255, 0, 0, 0)) blur(0px)",
+                            "drop-shadow(0 0 12px rgba(255, 0, 0, 1)) blur(1.5px)",
+                            "drop-shadow(0 0 0 rgba(255, 0, 0, 0)) blur(0px)"
+                          ],
+                      }
+                      : { scale: 1, color: "#FFF7D1", filter: "none" }
+                  }
+                  transition={{
+                    duration: 2,
+                    ease: "easeInOut",
+                    repeat: highlightedCountry === country.id ? Infinity : 0,
+                    repeatType: "reverse",
+                  }}
+                  style={{
+                    position: 'relative',
+                    zIndex: 2,
+                  }}
+                >
+                  <FontAwesomeIcon
+                    icon={faLocationDot}
+                    className="w-4 h-4 md:w-5 md:h-5"
+                  />
+                  {highlightedCountry === country.id && (
+                    <motion.div
+                      className="absolute inset-0 z-[-1]"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.5 }}
+                      style={{
+                        background: 'radial-gradient(circle, rgba(255, 0, 0, 0.3) 0%, rgba(255, 0, 0, 0) 60%)', // Changed to red and reduced spread
+                        filter: 'blur(4px)', // Reduced blur
+                        transform: 'scale(1.8)', // Slightly reduced scale
+                      }}
+                    />
+                  )}
+                </motion.div>
+                <AnimatePresence>
+                  {highlightedCountry === country.id && (
+                    <FlagPopup
+                      country={country}
+                      position={positionMap[country.id]}
+                    />
+                  )}
+                </AnimatePresence>
+              </div>
+            </div>
           ))}
         </div>
-        {hoveredCountry && (
-          <FlagPopup
-            country={dataArray.find((country) => country.id === hoveredCountry)}
-          />
-        )}
       </div>
     </div>
   );

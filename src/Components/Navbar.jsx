@@ -52,7 +52,7 @@ export default function Navbar({ language, setLanguage }) {
     <div
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-black text-[#cdab56] shadow-md"
+          ? "bg-black  text-[#cdab56]shadow-md"
           : "bg-transparent text-[#cdab56]"
       }`}
     >

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSmile, faTools, faUserTie } from "@fortawesome/free-solid-svg-icons"; 
+import { faSmile, faTools, faUserTie } from "@fortawesome/free-solid-svg-icons";
 
 const Counter = () => {
   const counters = [
@@ -36,7 +36,7 @@ const Counter = () => {
     useEffect(() => {
       if (visible) {
         let start = 0;
-        const duration = 3000; 
+        const duration = 3000;
         const increment = endValue / (duration / 10);
 
         const animate = () => {
@@ -54,7 +54,7 @@ const Counter = () => {
       }
     }, [visible, endValue]);
 
-    return count;
+    return `${count}+`; // Add the "+" sign here
   };
 
   return (

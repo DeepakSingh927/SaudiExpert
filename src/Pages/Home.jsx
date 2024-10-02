@@ -1,15 +1,16 @@
+import React from 'react';
 import HomeVideo from "../Components/HomeVideo";
 
 import Navbar from "../Components/Navbar";
 import { useState } from "react";
 import WorldMap from "../Components/WorldMap";
 import TextComponent from "../Components/TextComponent";
-import Footer from "../Components/Footer";
+import Footer from "../Components/footer";
 import MainCard from "../Components/MainCard";
 import FooterCard from "../Components/FooterCard";
 import DubaiEventAboutUs from "../Components/DubaiEventAboutUs";
 import Counter from "../Components/Counter ";
-import OurSevices from "../Components/OurSevices";
+import OurSevices from "../Components/oursevices"; // Corrected import
 import AboutCompany from "../Components/AboutCompany";
 
 
@@ -52,9 +53,8 @@ export default function Home() {
       <div className="relative z-10  bg-white  " id="services">
         <OurSevices />
       </div>
-      <div className="relative z-10  bg-white  " >
-        <WorldMap />
-      </div>
+      <WorldMap />
+       
       <div className="relative z-10  bg-white  " id="contact-us">
         <FooterCard />
       </div>
