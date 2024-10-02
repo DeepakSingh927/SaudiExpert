@@ -12,6 +12,7 @@ import DubaiEventAboutUs from "../Components/DubaiEventAboutUs";
 import Counter from "../Components/Counter ";
 import OurSevices from "../Components/oursevices"; // Corrected import
 import AboutCompany from "../Components/AboutCompany";
+import  Carousal from "../Components/Carousel";
 
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
     imageCaption: "Bringing your vision to life in Saudi's most iconic venues",
   };
 
+  
 
   const [language, setLanguage] = useState("en");
   return (
@@ -53,7 +55,12 @@ export default function Home() {
       <div className="relative z-10  bg-white  " id="services">
         <OurSevices />
       </div>
+      <div>
       <WorldMap />
+      </div>
+      <div className="relative z-10  bg-white  ">
+        <Carousal />
+      </div>
        
       <div className="relative z-10  bg-white  " id="contact-us">
         <FooterCard />

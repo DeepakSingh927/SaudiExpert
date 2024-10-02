@@ -4,21 +4,26 @@ import Home from "./Pages/Home";
 import Whatsapp from "./Components/Whatsapp";
 import useTitleChangeOnBlur from "./Components/useTitleChangeOnBlur";
 import OurSevices from "./Components/oursevices"; // Corrected import
+import Carousel from './Components/Carousel';
 
 function App() {
   useTitleChangeOnBlur("Saudi - Event", "Come back to Saudi - Event!");
 
   return (
-    <div className="overflow-x-hidden">
-      <Router basename="/SaudiExpert">
+    <Router basename="/"> {/* Remove the basename or set it to "/" */}
+      <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/" element={<OurSevices />} />
           {/* Add other routes here if needed */}
         </Routes>
         <Whatsapp />
-      </Router>
-    </div>
+        <section className="exhibitions">
+          <h2>Exhibitions</h2>
+          <Carousel />
+        </section>
+      </div>
+    </Router>
   );
 }
 

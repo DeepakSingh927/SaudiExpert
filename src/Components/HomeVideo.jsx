@@ -40,7 +40,7 @@ export default function HomeVideo() {
   const dataArray = ["Planner", "Exhibition", "Product", "Designer", "Tech"];
 
   return (
-    <div className="relative w-full h-screen font-sans overflow-hidden">
+    <div className="relative w-full h-screen font-sans">
       <div className="fixed top-0 left-0 w-full h-full">
         <video
           src={vid}
@@ -53,8 +53,8 @@ export default function HomeVideo() {
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50"></div>
       </div>
       <div className="fixed top-17 inset-0 flex items-center justify-center z-1">
-        <div className="text-center px-4 sm:px-6 lg:px-8 max-w-full">
-          <h1 className="check text-white font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight mb-6 tracking-wide animate-fadeInUp opacity-0 delay-100">
+        <div className="text-center px-4 sm:px-6 lg:px-8">
+          <h1 className="check text-white font-semibold text-7xl sm:text-7xl md:text-8xl lg:text-8xl leading-tight mb-6 tracking-wide animate-fadeInUp opacity-0 delay-100">
             <span className="block mb-2">EVENT AND EXHIBITIONS</span>
             <span className="block mb-2">LEADER IN</span>
             <span className="relative inline-block">
@@ -63,29 +63,30 @@ export default function HomeVideo() {
             </span>
           </h1>
 
-          <p className="font-lato text-[#cdab56] font-light text-lg sm:text-xl mt-8 animate-fadeInUp opacity-0 delay-200">
-            Crafting Transformative Experiences
+          <p className="font-lato text-[#cdab56] font-light text-xl sm:text-2xl mt-8 animate-fadeInUp opacity-0 delay-200">
+          Crafting Transformative Experiences
           </p>
           
           <a href="https://planninglabs.in/" target="blank">
-            <p className="font-lato inline-block text-white font-light text-base sm:text-lg mt-4 animate-fadeInUp opacity-0 delay-300 cursor-pointer">
-              Saudi Event Expert - A Division of{" "}
-              <span className="relative inline-block">
-                <span className="relative z-10">Planning Labs</span>
-                <span className="absolute inset-0 bg-[#006bf8] opacity-60 blur-sm transform -skew-x-12"></span>
-              </span>
-            </p>
+          <p className="font-lato inline-block text-white font-light text-lg sm:text-xl mt-4 animate-fadeInUp opacity-0 delay-300 cursor-pointer ">
+            Saudi Event Expert - A Division of{" "}
+            <span className="relative inline-block">
+              <span className="relative z-10">Planning Labs</span>
+              <span className="absolute inset-0 bg-[#006bf8] opacity-60 blur-sm transform -skew-x-12"></span>
+            </span>
+          </p>
           </a>
+         
         </div>
-      </div>
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-4 left-0 right-0 flex justify-center">
+         {/* Scroll Indicator */}
+      <div className="absolute bottom-4 flex justify-center w-full">
         <div className="flex flex-col items-center">
           <div className="relative h-16 w-12 border-2 border-[#cdab56] rounded-3xl flex justify-center items-center">
             <div className="h-4 w-2 bg-[#967c3a] rounded-full animate-bounce"></div>
           </div>
           <p className="text-white mt-2">Scroll</p>
         </div>
+      </div>
       </div>
     </div>
   );

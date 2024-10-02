@@ -48,7 +48,7 @@ export default function DubaiEventAboutUs({ companyData }) {
 
   return (
     <div
-      className="bg-[#0a0203] text-white py-16 relative min-h-screen overflow-hidden"
+      className="bg-[#0a0203] text-white py-16 relative min-h-screen"
       style={{
         backgroundImage: "url('/Assests/RIYADH.jpg')",
         backgroundAttachment: "fixed",
@@ -65,7 +65,7 @@ export default function DubaiEventAboutUs({ companyData }) {
               <h2 className="font-serif text-3xl font-extrabold text-[#cdab56] sm:text-4xl mb-4">
                 {companyData.tagline}
               </h2>
-              <p className="text-lg text-gray-300 mb-8">
+              <p className= " text-lg text-gray-300 mb-8">
                 {companyData.description}
               </p>
               <a

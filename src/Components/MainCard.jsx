@@ -1,12 +1,13 @@
 import React from 'react';
 
-function MainCard() {
-  // Component logic here
+const MainCard = () => {
+  console.log('Rendering MainCard');
   return (
-    <div>
-      {/* MainCard content */}
+    <div className="main-card">
+      <h2>Main Card</h2>
+      {/* Add your main card content here */}
     </div>
   );
-}
+};
 
 export default MainCard;
